@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "ChefJohn",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "username": "CookingQueen",
+      "email": "sarah@example.com"
+    },
+    {
+      "id": 3,
+      "username": "J. Kenji Lopez-Alt",
+      "email": "kenji@example.com"
+    },
+    {
+      "id": 4,
+      "username": "RielCooking",
+      "email": "riel@example.com"
+    }
+  ],
+  "cookingMethods": [
+    {
+      "id": 1,
+      "name": "Baking"
+    },
+    {
+      "id": 2,
+      "name": "Grilling"
+    },
+    {
+      "id": 3,
+      "name": "Slow Cooker"
+    },
+    {
+      "id": 4,
+      "name": "Sous Vide"
+    },
+    {
+      "id": 5,
+      "name": "Pressure Cooking"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Classic Chocolate Chip Cookies",
+      "ingredients": "2 1/4 cups all-purpose flour\n1 cup butter\n3/4 cup sugar\n3/4 cup brown sugar\n2 large eggs\n1 tsp vanilla extract\n1 tsp baking soda\n1/2 tsp salt\n2 cups chocolate chips",
+      "instructions": "1. Preheat oven to 375°F\n2. Cream butter and sugars\n3. Beat in eggs and vanilla\n4. Mix in dry ingredients\n5. Stir in chocolate chips\n6. Drop by rounded tablespoons onto baking sheets\n7. Bake for 10-12 minutes",
+      "cookingTime": 25,
+      "userId": 1,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "Grilled Lemon Herb Chicken",
+      "ingredients": "4 chicken breasts\n1/4 cup olive oil\n3 lemons\n4 cloves garlic\n1 tbsp fresh rosemary\n1 tbsp fresh thyme\nSalt and pepper to taste",
+      "instructions": "1. Mix olive oil, lemon juice, herbs, and garlic\n2. Marinate chicken for 2 hours\n3. Preheat grill to medium-high\n4. Grill chicken 6-7 minutes per side\n5. Let rest 5 minutes before serving",
+      "cookingTime": 30,
+      "userId": 2,
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "title": "Kenji's Sous Vide Ribeye Steak",
+      "ingredients": "1 large ribeye steak (1.5 to 2 inches thick)\n2 tablespoons olive oil\n4 sprigs fresh thyme\n3 cloves garlic, crushed\n2 tablespoons butter\nKosher salt\nFreshly ground black pepper",
+      "instructions": "1. Preheat sous vide water bath to 129°F (54°C) for medium-rare\n2. Season steak generously with salt and pepper\n3. Place steak in a zipper-lock or vacuum seal bag with thyme and garlic\n4. Seal bag using water displacement method or vacuum sealer\n5. Cook for 1 to 2.5 hours\n6. Remove steak from bag and pat very dry with paper towels\n7. Heat oil in a cast iron skillet until smoking\n8. Add steak and butter, sear 45 seconds per side\n9. Using tongs, sear edges until browned\n10. Let rest 5 minutes before slicing\n11. Serve with compound butter if desired",
+      "cookingTime": 150,
+      "userId": 3,
+      "categoryId": 4
+    },
+    {
+      "id": 4,
+      "title": "Kenji's Sous Vide Chicken Breast",
+      "ingredients": "4 chicken breasts (boneless, skinless)\n2 tablespoons olive oil\n4 sprigs fresh herbs (thyme, rosemary, or sage)\n2 cloves garlic, lightly crushed\nKosher salt\nBlack pepper\n2 tablespoons butter for finishing",
+      "instructions": "1. Preheat sous vide water bath to 145°F (63°C)\n2. Season chicken breasts generously with salt and pepper\n3. Place chicken in zipper-lock or vacuum seal bags with herbs and garlic\n4. Add 1 tablespoon olive oil per bag\n5. Seal bags using water displacement method or vacuum sealer\n6. Cook for 1.5 to 4 hours (chicken is safe to eat after 1.5 hours but can go longer)\n7. Remove from bags and pat very dry with paper towels\n8. Heat remaining oil in a heavy skillet over high heat until shimmering\n9. Add chicken and butter, sear until golden brown (30 seconds per side)\n10. Let rest 5 minutes before slicing\n11. Serve with pan juices",
+      "cookingTime": 90,
+      "userId": 3,
+      "categoryId": 4
+    }
+  ]
+}

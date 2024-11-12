@@ -1,0 +1,36 @@
+Table users {
+    id int pk
+    username varchar
+    email varchar
+    password varchar
+}
+
+Table recipes {
+    id int pk
+    title varchar
+    ingredients text
+    instructions text
+    cookingTime int
+    friendsNotes text
+    userId int [ref: > users.id]
+    categoryId int [ref: > categories.id]
+
+}
+
+Table categories {
+    id int pk
+    name varchar
+}
+
+Table friendsNotes {
+    id int pk
+    recipeId int [ref: > recipes.id]
+    userId int [ref: > users.id] 
+    comment text
+}
+
+Table similarRecipes {
+    id int pk
+    recipeId int [ref: > recipes.id]
+    similarRecipeId int [ref: > recipes.id]
+}
