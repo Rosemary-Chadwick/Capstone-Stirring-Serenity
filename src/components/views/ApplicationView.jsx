@@ -3,6 +3,9 @@ import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import { NavBar } from "../nav/NavBar.jsx";
 import { RecipeList } from "../recipes/RecipeList";
 import { RecipeDetails } from "../recipes/RecipeDetails";
+import { CreateRecipe } from "../recipes/CreateRecipe.jsx";
+import { MyRecipes } from "../recipes/MyRecipes.jsx";
+import { EditRecipe } from "../recipes/EditRecipe.jsx";
 
 const Layout = () => {
   return (
@@ -25,9 +28,15 @@ export const ApplicationViews = () => {
       <Route element={<Layout />}>
         <Route index element={<RecipeList />} />
         <Route path="recipes">
+          <Route index element={<RecipeList />} />
           <Route path=":recipeId" element={<RecipeDetails />} />
+          <Route path="create" element={<CreateRecipe />} />
+          <Route path="my-recipes" element={<MyRecipes />} />
+          <Route path="edit/:recipeId" element={<EditRecipe />} />
         </Route>
       </Route>
     </Routes>
   );
 };
+// :recipeId is a dynamic parameter.
+// The value of recipeId will be available as part of the URL, and React Router will capture it as a parameter.

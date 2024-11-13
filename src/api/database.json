@@ -51,7 +51,7 @@
       "instructions": "1. Preheat oven to 375°F\n2. Cream butter and sugars\n3. Beat in eggs and vanilla\n4. Mix in dry ingredients\n5. Stir in chocolate chips\n6. Drop by rounded tablespoons onto baking sheets\n7. Bake for 10-12 minutes",
       "cookingTime": 25,
       "userId": 1,
-      "categoryId": 1
+      "cookingMethodId": 1
     },
     {
       "id": 2,
@@ -60,7 +60,7 @@
       "instructions": "1. Mix olive oil, lemon juice, herbs, and garlic\n2. Marinate chicken for 2 hours\n3. Preheat grill to medium-high\n4. Grill chicken 6-7 minutes per side\n5. Let rest 5 minutes before serving",
       "cookingTime": 30,
       "userId": 2,
-      "categoryId": 2
+      "cookingMethodId": 2
     },
     {
       "id": 3,
@@ -69,7 +69,7 @@
       "instructions": "1. Preheat sous vide water bath to 129°F (54°C) for medium-rare\n2. Season steak generously with salt and pepper\n3. Place steak in a zipper-lock or vacuum seal bag with thyme and garlic\n4. Seal bag using water displacement method or vacuum sealer\n5. Cook for 1 to 2.5 hours\n6. Remove steak from bag and pat very dry with paper towels\n7. Heat oil in a cast iron skillet until smoking\n8. Add steak and butter, sear 45 seconds per side\n9. Using tongs, sear edges until browned\n10. Let rest 5 minutes before slicing\n11. Serve with compound butter if desired",
       "cookingTime": 150,
       "userId": 3,
-      "categoryId": 4
+      "cookingMethodId": 4
     },
     {
       "id": 4,
@@ -78,7 +78,65 @@
       "instructions": "1. Preheat sous vide water bath to 145°F (63°C)\n2. Season chicken breasts generously with salt and pepper\n3. Place chicken in zipper-lock or vacuum seal bags with herbs and garlic\n4. Add 1 tablespoon olive oil per bag\n5. Seal bags using water displacement method or vacuum sealer\n6. Cook for 1.5 to 4 hours (chicken is safe to eat after 1.5 hours but can go longer)\n7. Remove from bags and pat very dry with paper towels\n8. Heat remaining oil in a heavy skillet over high heat until shimmering\n9. Add chicken and butter, sear until golden brown (30 seconds per side)\n10. Let rest 5 minutes before slicing\n11. Serve with pan juices",
       "cookingTime": 90,
       "userId": 3,
-      "categoryId": 4
+      "cookingMethodId": 4
+    },
+    {
+      "title": "one to delete",
+      "ingrediants": "",
+      "instructions": "cook it",
+      "cookingTime": 0,
+      "userId": 3,
+      "catagoryId": "",
+      "cookingMethodId": 2,
+      "ingredients": "salt",
+      "id": 5
+    },
+    {
+      "title": "another",
+      "ingrediants": "",
+      "instructions": "cook",
+      "cookingTime": 6,
+      "userId": 3,
+      "catagoryId": "",
+      "cookingMethodId": 4,
+      "ingredients": "salt",
+      "id": 6
+    },
+    {
+      "title": "another 2",
+      "ingredients": "salt",
+      "instructions": "cook",
+      "cookingTime": 3,
+      "userId": 3,
+      "cookingMethodId": 4,
+      "id": 7
+    },
+    {
+      "title": "another 3 ",
+      "ingredients": "salt",
+      "instructions": "cook",
+      "cookingTime": 5,
+      "userId": 3,
+      "cookingMethodId": "4",
+      "id": 8
+    },
+    {
+      "title": "another 4",
+      "ingredients": "salt",
+      "instructions": "cook",
+      "cookingTime": 5,
+      "userId": 3,
+      "cookingMethodId": "3",
+      "id": 9
+    },
+    {
+      "title": "another 5 ",
+      "ingredients": "salt",
+      "instructions": "cook",
+      "cookingTime": 2,
+      "userId": 3,
+      "cookingMethodId": 3,
+      "id": 10
     }
   ]
 }

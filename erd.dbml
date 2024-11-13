@@ -13,11 +13,11 @@ Table recipes {
     cookingTime int
     friendsNotes text
     userId int [ref: > users.id]
-    categoryId int [ref: > categories.id]
+    cookingMethodId int [ref: > cookingMethod.id]
 
 }
 
-Table categories {
+Table cookingMethod {
     id int pk
     name varchar
 }

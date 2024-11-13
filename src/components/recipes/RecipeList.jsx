@@ -26,7 +26,7 @@ export const RecipeList = () => {
                 </p>
                 <p className="card-text">
                   <small className="text-muted">
-                    Method: {recipe.cookingMethod}
+                    Method: {recipe.cookingMethod?.name}
                   </small>
                 </p>
                 <button
