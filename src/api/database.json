@@ -19,6 +19,11 @@
       "id": 4,
       "username": "RielCooking",
       "email": "riel@example.com"
+    },
+    {
+      "email": "person@example.com",
+      "username": "person",
+      "id": 5
     }
   ],
   "cookingMethods": [
@@ -81,16 +86,16 @@
       "cookingMethodId": 4
     },
     {
-      "title": "Something to Edit again",
-      "ingredients": "meat 2",
-      "instructions": "heat2",
-      "cookingTime": 20,
+      "title": "Something to Edit again 2",
+      "ingredients": "meat 23",
+      "instructions": "heat23",
+      "cookingTime": 26,
       "userId": 3,
-      "cookingMethodId": 2,
+      "cookingMethodId": 3,
       "id": 5,
       "cookingMethod": {
-        "id": 5,
-        "name": "Pressure Cooking"
+        "id": 2,
+        "name": "Grilling"
       }
     }
   ]
