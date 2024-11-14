@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUserRecipesById } from "../../services/recipeService";
+import { deleteRecipe, getUserRecipesById } from "../../services/recipeService";
 import { useNavigate } from "react-router-dom";
 
 export const MyRecipes = () => {
@@ -9,6 +9,14 @@ export const MyRecipes = () => {
 
   const getRecipes = () => {
     getUserRecipesById(currentUser.id).then(setRecipes);
+  };
+
+  const handleDelete = (recipeId) => {
+    if (window.confirm("Are you sure you want to delete this recipe?")) {
+      deleteRecipe(recipeId).then(() => {
+        getRecipes();
+      });
+    }
   };
 
   useEffect(() => {
@@ -47,7 +55,12 @@ export const MyRecipes = () => {
                   >
                     Edit
                   </button>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(recipe.id)}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>

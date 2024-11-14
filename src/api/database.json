@@ -81,62 +81,13 @@
       "cookingMethodId": 4
     },
     {
-      "title": "one to delete",
-      "ingrediants": "",
-      "instructions": "cook it",
-      "cookingTime": 0,
+      "title": "Something to Edit",
+      "ingredients": "meat",
+      "instructions": "heat",
+      "cookingTime": 15,
       "userId": 3,
-      "catagoryId": "",
-      "cookingMethodId": 2,
-      "ingredients": "salt",
+      "cookingMethodId": 5,
       "id": 5
-    },
-    {
-      "title": "another",
-      "ingrediants": "",
-      "instructions": "cook",
-      "cookingTime": 6,
-      "userId": 3,
-      "catagoryId": "",
-      "cookingMethodId": 4,
-      "ingredients": "salt",
-      "id": 6
-    },
-    {
-      "title": "another 2",
-      "ingredients": "salt",
-      "instructions": "cook",
-      "cookingTime": 3,
-      "userId": 3,
-      "cookingMethodId": 4,
-      "id": 7
-    },
-    {
-      "title": "another 3 ",
-      "ingredients": "salt",
-      "instructions": "cook",
-      "cookingTime": 5,
-      "userId": 3,
-      "cookingMethodId": "4",
-      "id": 8
-    },
-    {
-      "title": "another 4",
-      "ingredients": "salt",
-      "instructions": "cook",
-      "cookingTime": 5,
-      "userId": 3,
-      "cookingMethodId": "3",
-      "id": 9
-    },
-    {
-      "title": "another 5 ",
-      "ingredients": "salt",
-      "instructions": "cook",
-      "cookingTime": 2,
-      "userId": 3,
-      "cookingMethodId": 3,
-      "id": 10
     }
   ]
 }

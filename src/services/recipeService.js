@@ -33,3 +33,9 @@ export const getUserRecipesById = (id) => {
     (res) => res.json()
   );
 };
+
+export const deleteRecipe = (id) => {
+  return fetch(`${API_BASE}/recipes/${id}`, {
+    method: "DELETE",
+  });
+};

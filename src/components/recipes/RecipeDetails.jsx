@@ -23,7 +23,7 @@ export const RecipeDetails = () => {
         <div className="card-body">
           <h2 className="card-title">{recipe.title}</h2>
           <div className="mb-3">
-            <strong>Cooking Method:</strong> {recipe.cookingMethod}
+            <strong>Cooking Method:</strong> {recipe.cookingMethod.name}
             <br />
             <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
           </div>
