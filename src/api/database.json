@@ -81,13 +81,17 @@
       "cookingMethodId": 4
     },
     {
-      "title": "Something to Edit",
-      "ingredients": "meat",
-      "instructions": "heat",
-      "cookingTime": 15,
+      "title": "Something to Edit again",
+      "ingredients": "meat 2",
+      "instructions": "heat2",
+      "cookingTime": 20,
       "userId": 3,
-      "cookingMethodId": 5,
-      "id": 5
+      "cookingMethodId": 2,
+      "id": 5,
+      "cookingMethod": {
+        "id": 5,
+        "name": "Pressure Cooking"
+      }
     }
   ]
 }

@@ -39,3 +39,13 @@ export const deleteRecipe = (id) => {
     method: "DELETE",
   });
 };
+
+export const editRecipe = (id, recipe) => {
+  return fetch(`${API_BASE}/recipes/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(recipe),
+  }).then((res) => res.json());
+};
