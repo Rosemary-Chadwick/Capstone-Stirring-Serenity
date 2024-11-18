@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../../theme/ThemeContext";
 
 export const NavBar = () => {
+  const { currentTheme, setCurrentTheme } = useTheme();
+
+  const toggleTheme = () => {
+    console.log("Current theme:", currentTheme); // Add this for debugging
+    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg">
       <div className="container">
         <Link className="navbar-brand" to="/">
           Stirring Serenity
         </Link>
-        <span className="navbar-text">Navbar text with an inline element</span>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,6 +35,17 @@ export const NavBar = () => {
                 My Recipes
               </Link>
             </li>
+
+            <li className="nav-item">
+              <button
+                className="nav-link btn theme-toggle"
+                onClick={toggleTheme}
+                style={{ background: "none", border: "none" }}
+              >
+                {currentTheme === "light" ? "🌙" : "☀️"}
+              </button>
+            </li>
+
             <li className="nav-item">
               <Link
                 className="nav-link"

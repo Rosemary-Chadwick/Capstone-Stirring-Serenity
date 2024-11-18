@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import "./Auth.css";
 import { createUser, getUserByEmail } from "../../services/userService";
 
 export const Register = () => {
@@ -46,44 +46,53 @@ export const Register = () => {
   };
 
   return (
-    <main style={{ textAlign: "center" }}>
-      <form className="form-login" onSubmit={handleRegister}>
-        <h1>Stirring Serenity</h1>
-        <h2>Please Register</h2>
-        {error && <p className="error-message">{error}</p>}
-        <fieldset>
-          <div className="form-group">
-            <input
-              onChange={updateUser}
-              type="text"
-              id="username"
-              className="form-control"
-              placeholder="Enter your user name"
-              required
-              autoFocus
-            />
+    <div className="auth-container">
+      <div className="container py-4">
+        <div className="card shadow-sm">
+          <div className="card-body">
+            <form className="auth-form" onSubmit={handleRegister}>
+              <h1>Stirring Serenity</h1>
+              <h2>Please Register</h2>
+              {error && <p className="error-message">{error}</p>}
+              <fieldset>
+                <div className="form-group">
+                  <input
+                    onChange={updateUser}
+                    type="text"
+                    id="username"
+                    className="form-control"
+                    placeholder="Enter your user name"
+                    required
+                    autoFocus
+                  />
+                </div>
+              </fieldset>
+              <fieldset>
+                <div className="form-group">
+                  <input
+                    onChange={updateUser}
+                    type="email"
+                    id="email"
+                    className="form-control"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+              </fieldset>
+              <fieldset>
+                <div className="form-group">
+                  <button className="btn btn-primary" type="submit">
+                    Register
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+            <div className="auth-link">
+              <Link to="/login">Already a Member?</Link>
+            </div>
           </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <input
-              onChange={updateUser}
-              type="email"
-              id="email"
-              className="form-control"
-              placeholder="Email address"
-              required
-            />
-          </div>
-        </fieldset>
-        <fieldset>
-          <div className="form-group">
-            <button className="login-btn btn-info" type="submit">
-              Register
-            </button>
-          </div>
-        </fieldset>
-      </form>
-    </main>
+        </div>
+      </div>
+    </div>
   );
 };

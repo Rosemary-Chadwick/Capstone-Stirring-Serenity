@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
+import "./Auth.css";
 import { getUserByEmail } from "../../services/userService";
 
 export const Login = () => {
@@ -30,37 +30,41 @@ export const Login = () => {
   };
 
   return (
-    <main className="container-login">
-      <section>
-        <form className="form-login" onSubmit={handleLogin}>
-          <h1>Stirring Serenity</h1>
-          <h2>Please sign in</h2>
-          <fieldset>
-            <div className="form-group">
-              <input
-                type="email"
-                value={email}
-                onChange={(evt) => setEmail(evt.target.value)}
-                className="form-control"
-                placeholder="Email address"
-                required
-                autoFocus
-              />
+    <div className="auth-container">
+      <div className="container py-4">
+        <div className="card shadow-sm">
+          <div className="card-body">
+            <form className="auth-form" onSubmit={handleLogin}>
+              <h1>Stirring Serenity</h1>
+              <h2>Please sign in</h2>
+              <fieldset>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(evt) => setEmail(evt.target.value)}
+                    className="form-control"
+                    placeholder="Email address"
+                    required
+                    autoFocus
+                  />
+                </div>
+              </fieldset>
+              <fieldset>
+                <div className="form-group">
+                  <button className="btn btn-primary" type="submit">
+                    Sign in
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+            <div className="auth-link">
+              <Link to="/register">Not a member yet?</Link>
             </div>
-          </fieldset>
-          <fieldset>
-            <div className="form-group">
-              <button className="login-btn btn-info" type="submit">
-                Sign in
-              </button>
-            </div>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
-      </section>
-    </main>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
