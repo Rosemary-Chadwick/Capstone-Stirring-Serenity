@@ -60,17 +60,13 @@ export const EditRecipe = () => {
     <div className="container py-4">
       <div className="card shadow-sm bg-light">
         <div className="card-body">
-          <h2 className="card-title text-center mb-4 text-primary">
-            Edit Recipe
-          </h2>
-          <form onSubmit={handleSubmit}>
+          <h2 className="card-title text-center mb-4">Edit Recipe</h2>
+          <form className="recipe-form" onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-md-6 mb-3">
                 <div className="card h-100 border-primary border-opacity-25">
                   <div className="card-body">
-                    <h5 className="card-title text-primary mb-3">
-                      Recipe Information
-                    </h5>
+                    <h5 className="card-title mb-3">Recipe Information</h5>
 
                     <div className="mb-3">
                       <label className="form-label fw-bold">Recipe Title</label>
@@ -124,9 +120,7 @@ export const EditRecipe = () => {
               <div className="col-md-6 mb-3">
                 <div className="card h-100 border-success border-opacity-25">
                   <div className="card-body">
-                    <h5 className="card-title text-success mb-3">
-                      Ingredients
-                    </h5>
+                    <h5 className="card-title mb-3">Ingredients</h5>
                     <small className="form-text text-muted d-block mb-2">
                       Enter each ingredient on a new line
                     </small>
@@ -146,7 +140,7 @@ export const EditRecipe = () => {
               <div className="col-12 mb-3">
                 <div className="card border-info border-opacity-25">
                   <div className="card-body">
-                    <h5 className="card-title text-info mb-3">Instructions</h5>
+                    <h5 className="card-title mb-3">Instructions</h5>
                     <small className="form-text text-muted d-block mb-2">
                       Enter each step on a new line
                     </small>

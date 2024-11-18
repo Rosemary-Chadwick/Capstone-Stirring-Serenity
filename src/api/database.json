@@ -19,6 +19,11 @@
       "id": 4,
       "username": "RielCooking",
       "email": "riel@example.com"
+    },
+    {
+      "email": "rrchadwick@hotmail.com",
+      "username": "rrchadwick@hotmail.com",
+      "id": 5
     }
   ],
   "cookingMethods": [
@@ -78,7 +83,11 @@
       "instructions": "1. Preheat sous vide water bath to 145°F (63°C)\n2. Season chicken breasts generously with salt and pepper\n3. Place chicken in zipper-lock or vacuum seal bags with herbs and garlic\n4. Add 1 tablespoon olive oil per bag\n5. Seal bags using water displacement method or vacuum sealer\n6. Cook for 1.5 to 4 hours (chicken is safe to eat after 1.5 hours but can go longer)\n7. Remove from bags and pat very dry with paper towels\n8. Heat remaining oil in a heavy skillet over high heat until shimmering\n9. Add chicken and butter, sear until golden brown (30 seconds per side)\n10. Let rest 5 minutes before slicing\n11. Serve with pan juices",
       "cookingTime": 90,
       "userId": 3,
-      "cookingMethodId": 4
+      "cookingMethodId": 4,
+      "cookingMethod": {
+        "id": 4,
+        "name": "Sous Vide"
+      }
     },
     {
       "title": "Something to Edit again",
@@ -92,6 +101,15 @@
         "id": 5,
         "name": "Pressure Cooking"
       }
+    },
+    {
+      "title": "Grilled Cheese",
+      "ingredients": "3 cups of shredded cheese\n2 slices of bread\n1 Tbsp of butter",
+      "instructions": "1. Slather butter on bread\n2. Turn pan on Medium\n3. Place one slice of bread in the pan, butter side down please.\n4. Pour shredded cheese on top of bread. DON'T DROP ANY CHEESE PLEASE\n5. Place second slice of bread on top of pile of cheese. Butter side up please.\n6. Heat on each side until brown, or as dark as you like.\nCUT ON DIAGONAL ONLY PLEASE",
+      "cookingTime": 5,
+      "userId": 3,
+      "cookingMethodId": 2,
+      "id": 6
     }
   ]
 }

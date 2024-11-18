@@ -1,0 +1,588 @@
+@import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+/* Add this to your theme.css */
+.theme-light {
+  --primary: #1b2a3c;
+  --secondary: #fa8072; /* Soft salmon */
+  --accent: #daa520; /* Golden mustard */
+  --background: #fdf6e3; /* Cream background */
+  --container-bg: var(--background);
+  --text: #1b2a3c; /* Dark navy text */
+  --nav-bg: #1b2a3c; /* Dark navy nav */
+  --nav-text: #fdf6e3; /* Cream text in nav */
+  --nav-brand: #daa520; /* Mustard for brand */
+  --brown-accent: #2d1810; /* Brown moved to accent */
+  --forest: #5f7161; /* Grey forest green */
+  --outline: #d1d5db;
+  --offWhite: #f9fafb;
+  --header-font: "Petit Formal Script", cursive;
+  --body-font: "Quicksand", sans-serif;
+}
+
+.theme-dark {
+  --primary: #8fb0b0; /* Lighter grey-teal */
+  --secondary: #ff9e8c; /* Brighter salmon */
+  --accent: #daa520; /* Lighter mustard */
+  --background: #1b2a3c; /* Deep navy background */
+  --container-bg: var(--background);
+  --text: #fdf6e3; /* Cream text */
+  --nav-bg: #141e2c; /* Darker navy nav */
+  --nav-text: #fdf6e3; /* Cream text in nav */
+  --nav-brand: #ffd365; /* Light mustard for brand */
+  --brown-accent: #8b4513; /* Lighter brown accent */
+  --forest: #7d907d; /* Lighter grey forest green */
+  --outline: #4b5563;
+  --offWhite: #374151;
+  --header-font: "Petit Formal Script", cursive;
+  --body-font: "Quicksand", sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--nav-bg) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100% !important;
+  padding: 1rem 0;
+}
+
+/* Make brand link different color */
+.navbar-brand {
+  color: var(--nav-brand) !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+/* Make other nav links match brand color */
+.nav-link {
+  color: var(--nav-brand) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Container and Card Styles */
+.container {
+  background-color: var(--container-bg) !important;
+}
+
+/* Style for the main recipe details card container */
+.card {
+  background-color: var(--container-bg) !important;
+  border: none !important;
+  margin: 1rem 0;
+}
+
+/* Style for the inner recipe sections (ingredients, instructions) */
+.card .list-group {
+  background-color: var(--container-bg) !important;
+}
+
+.list-group-item {
+  background-color: var(--container-bg) !important;
+  color: var(--text) !important;
+  border: none !important;
+  padding: 0.5rem 0;
+}
+
+/* Rest of your existing styles remain the same */
+.navbar > .container {
+  max-width: 100% !important;
+  padding: 0 2rem;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+  color: var(--accent) !important;
+}
+
+.nav-link.active {
+  color: var(--accent) !important;
+  font-weight: 500;
+}
+
+.navbar-toggler {
+  border-color: var(--nav-text) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--nav-text) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+.form-control {
+  background-color: var(--nav-text) !important;
+  border-color: var(--nav-text) !important;
+  color: var(--text) !important;
+}
+
+/* Style for the select element */
+.form-select {
+  background-color: var(--container-bg) !important;
+  color: var(--text) !important;
+  font-family: "Your-Preferred-Font", sans-serif; /* Replace with your preferred font */
+  border-color: var(--outline) !important;
+}
+
+/* Style for the options within the select */
+.form-select option {
+  background-color: var(--container-bg) !important;
+  color: var(--text) !important;
+  font-family: "Your-Preferred-Font", sans-serif; /* Replace with your preferred font */
+}
+
+/* Style for the select when it's focused */
+.form-select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.25rem rgba(124, 54, 38, 0.25) !important; /* Adjust the rgba values to match your primary color */
+}
+
+/* Style for the disabled option (if you have any) */
+.form-select option:disabled {
+  color: var(--outline) !important;
+}
+
+/* Style for the selected option */
+.form-select option:checked {
+  background-color: var(--primary) !important;
+  color: var(--nav-text) !important;
+}
+
+/* Common styles for all form controls (inputs, textareas, and selects) */
+.form-control,
+.form-select {
+  background-color: var(--container-bg) !important;
+  color: var(--text) !important;
+  border-color: var(--outline) !important;
+}
+
+/* Style for labels */
+.form-label {
+  color: var(--text) !important;
+}
+
+/* Style for card titles */
+.card-title {
+  color: var(--text) !important;
+}
+
+/* Style for helper text */
+.form-text,
+.text-muted {
+  color: var(--text) !important;
+  opacity: 0.8;
+}
+
+/* Style for placeholders */
+.form-control::placeholder {
+  color: var(--text) !important;
+  opacity: 0.5;
+}
+
+/* Style for focused state */
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--container-bg) !important;
+  color: var(--text) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.25rem rgba(124, 54, 38, 0.25) !important;
+}
+
+/* Style for the cards containing form elements */
+.card {
+  background-color: var(--container-bg) !important;
+}
+
+/* Remove borders if you want a cleaner look */
+.border-primary,
+.border-success,
+.border-info {
+  border: none !important;
+}
+
+/* Optional: Style for the container background */
+.container.py-4 {
+  background-color: var(--background) !important;
+}
+
+/* Optional: Add some subtle separation between sections */
+.card-body {
+  background-color: var(--container-bg) !important;
+}
+
+/* Style for textareas */
+textarea.form-control {
+  resize: vertical; /* Allows vertical resizing only */
+}
+
+/* Style the outer container */
+.container.py-4 {
+  background-color: var(--background) !important;
+}
+
+/* Style the outer card div */
+.container.py-4 > .card.shadow-sm {
+  background-color: var(--outer-card-bg) !important;
+}
+
+/* Override Bootstrap's bg-light class */
+.card.shadow-sm.bg-light {
+  background-color: var(--outer-card-bg) !important;
+}
+
+/* Style the card-body containing the form */
+.container.py-4 > .card.shadow-sm > .card-body {
+  background-color: var(--outer-card-bg) !important;
+}
+
+/* Style the form container */
+.recipe-form {
+  max-width: 1200px; /* or whatever maximum width you prefer */
+  margin: 0 auto; /* This centers the form horizontally */
+  padding: 2rem; /* Add some padding around the form */
+}
+
+/* Style the outer containers */
+.container.py-4 {
+  background-color: var(--background) !important;
+}
+
+.container.py-4 > .card.shadow-sm {
+  background-color: var(--outer-card-bg) !important;
+}
+
+/* Center the cards inside the form */
+.recipe-form .row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Adds space between cards */
+}
+
+/* Adjust card widths if needed */
+.recipe-form .col-md-6 {
+  max-width: 500px; /* or whatever width you prefer */
+}
+
+.recipe-form .col-12 {
+  max-width: 1000px; /* or whatever width you prefer */
+}
+
+/* Optional: Add some spacing between sections */
+.recipe-form .card {
+  margin-bottom: 2rem;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--nav-text) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+/* Warning/Edit Button */
+.btn-warning {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--text) !important;
+}
+
+.btn-warning:hover {
+  background-color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: var(--nav-text) !important;
+}
+
+/* Danger/Delete Button */
+.btn-danger {
+  background-color: #dc3545 !important; /* You can also create a new theme variable for this */
+  border-color: #dc3545 !important;
+  color: var(--nav-text) !important;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b !important;
+  border-color: #bb2d3b !important;
+}
+
+/* Optional: Add focus states */
+.btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(124, 54, 38, 0.25) !important;
+}
+
+/* Optional: Add disabled states */
+.btn:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+/* Style the recipe details card */
+.recipe-form .card {
+  border: none !important;
+  background-color: var(--container-bg) !important;
+  margin-bottom: 1rem;
+}
+
+/* Style the headings */
+.recipe-form h2.card-title {
+  color: var(--text) !important;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-form h4 {
+  color: var(--text) !important;
+  margin-bottom: 1rem;
+}
+
+/* Style the method and time text */
+.recipe-form strong {
+  color: var(--text) !important;
+  opacity: 0.9;
+}
+
+/* Style the lists */
+.recipe-form .list-group-item {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0.5rem 0;
+  color: var(--text) !important;
+}
+
+/* Add padding to ordered list */
+.recipe-form ol.list-group {
+  padding-left: 1.5rem;
+}
+
+/* Style list numbers */
+.recipe-form ol.list-group li {
+  list-style-position: outside;
+}
+
+/* Center the back button */
+.recipe-form .text-center {
+  margin-top: 2rem;
+}
+
+/* Make sure all text is readable */
+.recipe-form .card-body {
+  color: var(--text) !important;
+}
+
+/* Style the recipe grid container */
+.recipe-form .row-cols-md-3 {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* Style individual recipe cards */
+.recipe-form .col .card {
+  transition: transform 0.2s ease;
+  border: none !important;
+  background-color: var(--container-bg) !important;
+  height: 100%;
+}
+
+/* Add hover effect to cards */
+.recipe-form .col .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Style card titles */
+.recipe-form .card-title {
+  color: var(--text) !important;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Style card text */
+.recipe-form .card-text {
+  color: var(--text) !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the muted text */
+.recipe-form .text-muted {
+  color: var(--text) !important;
+  opacity: 0.8;
+}
+
+/* Add space between text and button */
+.recipe-form .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Push button to bottom of card */
+.recipe-form .card-body .btn {
+  margin-top: auto;
+}
+
+/* Adjust grid spacing */
+.recipe-form .g-4 {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
+}
+
+/* Make cards equal height in a row */
+.recipe-form .row {
+  height: 100%;
+}
+
+/* Add some padding to card body */
+.recipe-form .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+/* Shared card styles for both Recipe List and My Recipes */
+.recipe-form .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none !important;
+  background-color: var(--container-bg) !important;
+  height: 100%;
+}
+
+/* Hover effect for all cards in recipe-form */
+.recipe-form .col .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Style card contents */
+.recipe-form .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+/* Push buttons to bottom of card */
+.recipe-form .card-body .d-flex {
+  margin-top: auto;
+}
+
+/* Style card titles */
+.recipe-form .card-title {
+  color: var(--text) !important;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Style card text */
+.recipe-form .card-text {
+  color: var(--text) !important;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the muted text */
+.recipe-form .text-muted {
+  color: var(--text) !important;
+  opacity: 0.8;
+}
+
+/* Adjust grid spacing */
+.recipe-form .g-4 {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
+}
+
+/* Make cards equal height in a row */
+.recipe-form .row {
+  height: 100%;
+}
+
+/* Ensure proper button spacing in button groups */
+.recipe-form .d-flex.gap-2 {
+  gap: 0.5rem !important;
+}
+
+/* Style error messages */
+.error-message {
+  color: #fa8072; /* Using salmon for errors */
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-family: "Quicksand", sans-serif !important;
+}
+
+/* Apply header font to all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title,
+.navbar-brand {
+  font-family: var(--header-font) !important;
+}
+
+/* Adjust specific header sizes */
+h1,
+.h1 {
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+}
+
+h2,
+.h2 {
+  font-size: 2.8rem !important;
+  font-weight: 700 !important;
+}
+
+h3,
+.h3 {
+  font-size: 2.3rem !important;
+}
+
+h4,
+.h4 {
+  font-size: 2rem !important;
+}
+
+.navbar-brand {
+  font-size: 2rem !important;
+}
+
+/* Apply body font to everything else */
+body,
+button,
+input,
+select,
+textarea,
+.nav-link,
+.btn,
+p,
+li,
+.form-control {
+  font-family: var(--body-font) !important;
+}
+
+/* Adjust recipe card title sizes */
+.recipe-form .card-title {
+  font-size: 1.8rem !important;
+}
+
+/* Add some letter spacing to the body font for better readability */
+body {
+  letter-spacing: 0.01em;
+}
+
+/* Make buttons a bit more elegant */
+.btn {
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}

@@ -1,8 +1,48 @@
-/* Add your custom styles here */
-body {
+/* Base styles */
+html,
+body,
+#root {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
 }
 
-/* Override Bootstrap styles here if needed */
+/* Root variables for light theme (default) */
+:root {
+  --primary: #2f4f4f;
+  --secondary: #fa8072;
+  --accent: #daa520;
+  --background: #fdf6e3;
+  --text: #1b2a3c;
+  --nav-bg: #1b2a3c;
+  --nav-text: #fdf6e3;
+  --nav-brand: #daa520;
+  --brown-accent: #2d1810;
+  --forest: #5f7161;
+  --outline: #d1d5db;
+  --offWhite: #f9fafb;
+}
 
+/* Applied styles */
+body {
+  background-color: var(--background) !important;
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background) !important;
+}
+
+/* Ensure smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Override any Bootstrap container backgrounds */
+.container,
+.container-fluid {
+  background-color: var(--background) !important;
+}
