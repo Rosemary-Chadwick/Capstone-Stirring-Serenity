@@ -9,9 +9,9 @@ export const getAllRecipes = () => {
 };
 
 export const getRecipeById = (id) => {
-  return fetch(`${API_BASE}/recipes/${id}?_expand=cookingMethod`).then((res) =>
-    res.json()
-  );
+  return fetch(
+    `${API_BASE}/recipes/${id}?_expand=cookingMethod&_expand=user`
+  ).then((res) => res.json());
 };
 
 export const createRecipeInfo = (recipe) => {
