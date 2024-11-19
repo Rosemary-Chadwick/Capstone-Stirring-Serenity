@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getRecipeById } from "../../services/recipeService";
+import { RatingsSummary } from "../ratings/AddRating";
+import { NotesList } from "../notes/AddNote";
 
 export const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
@@ -38,17 +40,17 @@ export const RecipeDetails = () => {
             </p>
 
             <div className="info-section mb-4">
-              <p className="card-text">
+              <p className="card-text px-4">
                 <strong>Cooking Method:</strong> {recipe.cookingMethod.name}
               </p>
-              <p className="card-text">
+              <p className="card-text px-4">
                 <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
               </p>
             </div>
 
             <div className="mb-4">
               <h4>Ingredients</h4>
-              <ul className="list-group">
+              <ul className="list-group px-4">
                 {ingredientsList.map((ingredient, index) => (
                   <li key={index} className="list-group-item">
                     {ingredient}
@@ -59,7 +61,7 @@ export const RecipeDetails = () => {
 
             <div className="mb-4">
               <h4>Instructions</h4>
-              <ol className="list-group">
+              <ol className="list-group px-4">
                 {instructionsList.map((instruction, index) => (
                   <li key={index} className="list-group-item">
                     {instruction}
@@ -75,6 +77,13 @@ export const RecipeDetails = () => {
                   ? "My Recipes"
                   : "All Recipes"}
               </button>
+            </div>
+            <div className="mt-4">
+              <RatingsSummary recipeId={recipeId} />
+            </div>
+
+            <div className="mt-4">
+              <NotesList recipeId={recipeId} />
             </div>
           </div>
         </div>
