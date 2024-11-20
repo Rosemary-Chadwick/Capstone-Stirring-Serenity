@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getRecipeById } from "../../services/recipeService";
-import { RatingsSummary } from "../ratings/AddRating";
-import { NotesList } from "../notes/AddNote";
+import { RatingsSummary } from "../ratings/RatingsSummary";
+import { NotesList } from "../notes/NoteList";
 
 export const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
