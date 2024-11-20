@@ -24,6 +24,11 @@
       "email": "rrchadwick@hotmail.com",
       "username": "rrchadwick@hotmail.com",
       "id": 5
+    },
+    {
+      "email": "justinC@example.com",
+      "username": "Justin Chadwick",
+      "id": 6
     }
   ],
   "cookingMethods": [
@@ -107,9 +112,179 @@
       "ingredients": "3 cups of shredded cheese\n2 slices of bread\n1 Tbsp of butter",
       "instructions": "1. Slather butter on bread\n2. Turn pan on Medium\n3. Place one slice of bread in the pan, butter side down please.\n4. Pour shredded cheese on top of bread. DON'T DROP ANY CHEESE PLEASE\n5. Place second slice of bread on top of pile of cheese. Butter side up please.\n6. Heat on each side until brown, or as dark as you like.\nCUT ON DIAGONAL ONLY PLEASE",
       "cookingTime": 5,
-      "userId": 3,
+      "userId": 6,
       "cookingMethodId": 2,
       "id": 6
+    }
+  ],
+  "ratings": [
+    {
+      "recipeId": 2,
+      "userId": 3,
+      "rating": 5,
+      "dateCreated": "2024-11-19T17:56:08.371Z",
+      "id": 1
+    },
+    {
+      "recipeId": 1,
+      "userId": 3,
+      "rating": 1,
+      "dateCreated": "2024-11-19T19:37:32.256Z",
+      "id": 2
+    },
+    {
+      "recipeId": 1,
+      "userId": 2,
+      "rating": 5,
+      "dateCreated": "2024-11-19T20:49:09.304Z",
+      "id": 3
+    },
+    {
+      "recipeId": 3,
+      "userId": 2,
+      "rating": 5,
+      "dateCreated": "2024-11-19T20:51:13.952Z",
+      "id": 4
+    },
+    {
+      "recipeId": 4,
+      "userId": 2,
+      "rating": 4,
+      "dateCreated": "2024-11-19T20:52:01.013Z",
+      "id": 5
+    },
+    {
+      "recipeId": 1,
+      "userId": 6,
+      "rating": 4,
+      "dateCreated": "2024-11-19T20:56:28.634Z",
+      "id": 6
+    },
+    {
+      "recipeId": 2,
+      "userId": 6,
+      "rating": 3,
+      "dateCreated": "2024-11-19T20:57:19.460Z",
+      "id": 7
+    },
+    {
+      "recipeId": 3,
+      "userId": 6,
+      "rating": 4,
+      "dateCreated": "2024-11-19T20:57:54.459Z",
+      "id": 8
+    },
+    {
+      "recipeId": 6,
+      "userId": 3,
+      "rating": 5,
+      "dateCreated": "2024-11-19T20:59:47.169Z",
+      "id": 9
+    },
+    {
+      "recipeId": 2,
+      "userId": 1,
+      "rating": 5,
+      "dateCreated": "2024-11-19T21:19:32.075Z",
+      "id": 10
+    },
+    {
+      "recipeId": 6,
+      "userId": 1,
+      "rating": 5,
+      "dateCreated": "2024-11-19T21:20:25.003Z",
+      "id": 11
+    },
+    {
+      "recipeId": 4,
+      "userId": 1,
+      "rating": 1,
+      "dateCreated": "2024-11-20T16:51:24.915Z",
+      "id": 12
+    }
+  ],
+  "friendsNotes": [
+    {
+      "recipeId": 2,
+      "userId": 3,
+      "comment": "Wonderful tasting, and easy to make. I served it with rice and a salad. I might add cherry tomatoes and white wine at the end next time, to make a little sauce and deglaze the pan.",
+      "dateCreated": "2024-11-19T17:57:48.645Z",
+      "id": 1,
+      "user": {
+        "id": 3,
+        "username": "J. Kenji Lopez-Alt",
+        "email": "kenji@example.com"
+      }
+    },
+    {
+      "recipeId": 1,
+      "userId": 2,
+      "comment": "Very yummy cookies!",
+      "dateCreated": "2024-11-19T20:50:07.654Z",
+      "id": 2
+    },
+    {
+      "recipeId": 3,
+      "userId": 2,
+      "comment": "Very tender steak! And very easy to make!",
+      "dateCreated": "2024-11-19T20:51:36.207Z",
+      "id": 3
+    },
+    {
+      "recipeId": 4,
+      "userId": 2,
+      "comment": "Delicious chicken! It was hard to get a good sear on though",
+      "dateCreated": "2024-11-19T20:52:57.443Z",
+      "id": 4
+    },
+    {
+      "recipeId": 1,
+      "userId": 6,
+      "comment": "Would be better with peanut butter!",
+      "dateCreated": "2024-11-19T20:56:54.263Z",
+      "id": 5
+    },
+    {
+      "recipeId": 2,
+      "userId": 6,
+      "comment": "Too much lemon!",
+      "dateCreated": "2024-11-19T20:57:30.367Z",
+      "id": 6
+    },
+    {
+      "recipeId": 3,
+      "userId": 6,
+      "comment": "I missed the charcoal flavor. But it was very tasty!",
+      "dateCreated": "2024-11-19T20:58:31.628Z",
+      "id": 7
+    },
+    {
+      "recipeId": 1,
+      "userId": 3,
+      "comment": "I don't believe in sugar!",
+      "dateCreated": "2024-11-19T20:59:24.852Z",
+      "id": 8
+    },
+    {
+      "recipeId": 6,
+      "userId": 3,
+      "comment": "Finally a recipe with enough cheese!",
+      "dateCreated": "2024-11-19T21:00:02.018Z",
+      "id": 9
+    },
+    {
+      "recipeId": 2,
+      "userId": 1,
+      "comment": "Lovely chicken with some rice",
+      "dateCreated": "2024-11-19T21:20:09.387Z",
+      "id": 10
+    },
+    {
+      "recipeId": 6,
+      "userId": 1,
+      "comment": "Nice and hearty grilled cheese! provided you can find large enough bread!",
+      "dateCreated": "2024-11-19T21:21:00.755Z",
+      "id": 11
     }
   ]
 }
