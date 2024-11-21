@@ -18,6 +18,8 @@ export const CreateRecipe = () => {
   //.id: Once the string has been parsed into a JavaScript object, you can access the properties of that object.
   const [cookingMethods, setCookingMethods] = useState([]);
   const navigate = useNavigate();
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     getCookingMethods().then(setCookingMethods);
@@ -31,33 +33,69 @@ export const CreateRecipe = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const cleanedRecipe = {
-      ...recipe,
-      ingredients: recipe.ingredients
-        .split("\n")
-        .map((i) => i.trim())
-        .filter((i) => i !== "")
-        .join("\n"),
-      instructions: recipe.instructions
-        .split("\n")
-        .map((i) => i.trim())
-        .filter((i) => i !== "")
-        .join("\n"),
-      cookingTime: parseInt(recipe.cookingTime) || 0,
-      cookingMethodId: parseInt(recipe.cookingMethodId) || 0,
-    };
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      // Validate file size (5MB limit)
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Image must be smaller than 5MB");
+        return;
+      }
 
-    // !== is a strict inequality operator
-    // Suppose recipe.cookingTime = "" (an empty string).
-    // parseInt("") returns NaN.
-    // Since NaN is falsy, || 0 ensures that cookingTime is set to 0
+      // Validate file type
+      if (!["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
+        alert("Only .jpg, .jpeg and .png files are allowed");
+        return;
+      }
 
-    createRecipeInfo(cleanedRecipe).then(() => {
-      navigate("/recipes/my-recipes");
-    });
+      setImageFile(file);
+      setImagePreview(URL.createObjectURL(file));
+    }
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const formData = new FormData();
+
+      const cleanedRecipe = {
+        ...recipe,
+        ingredients: recipe.ingredients
+          .split("\n")
+          .map((i) => i.trim())
+          .filter((i) => i !== "")
+          .join("\n"),
+        instructions: recipe.instructions
+          .split("\n")
+          .map((i) => i.trim())
+          .filter((i) => i !== "")
+          .join("\n"),
+        cookingTime: parseInt(recipe.cookingTime) || 0,
+        cookingMethodId: parseInt(recipe.cookingMethodId) || 0,
+      };
+
+      // Append all recipe data
+      Object.keys(cleanedRecipe).forEach((key) => {
+        formData.append(key, cleanedRecipe[key]);
+      });
+
+      // Append image if exists
+      if (imageFile) {
+        formData.append("image", imageFile);
+      }
+
+      await createRecipeInfo(formData);
+      navigate("/recipes/my-recipes");
+    } catch (error) {
+      console.error("Error creating recipe:", error);
+      alert("Failed to create recipe. Please try again.");
+    }
+  };
+
+  // !== is a strict inequality operator
+  // Suppose recipe.cookingTime = "" (an empty string).
+  // parseInt("") returns NaN.
+  // Since NaN is falsy, || 0 ensures that cookingTime is set to 0
 
   return (
     <div className="container py-4">
@@ -115,6 +153,26 @@ export const CreateRecipe = () => {
                         onChange={handleInputChange}
                         required
                       />
+                    </div>
+
+                    <div className="mb-3">
+                      <label className="form-label fw-bold">Recipe Image</label>
+                      <input
+                        type="file"
+                        className="form-control border border-2"
+                        accept="image/jpeg,image/png,image/jpg"
+                        onChange={handleImageChange}
+                      />
+                      {imagePreview && (
+                        <div className="mt-2">
+                          <img
+                            src={imagePreview}
+                            alt="Recipe preview"
+                            className="img-thumbnail"
+                            style={{ maxHeight: "200px", objectFit: "cover" }}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

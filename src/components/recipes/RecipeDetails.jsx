@@ -32,42 +32,60 @@ export const RecipeDetails = () => {
       <div className="recipe-form">
         <div className="card">
           <div className="card-body">
-            <h2 className="card-title text-center">{recipe.title}</h2>
-            <p className="text-center card-text">
-              <small className="text-muted">
-                Created by: {recipe.user?.username}
-              </small>
-            </p>
+            <div className="recipe-details-row">
+              <div className="col-md-8">
+                <h2 className="card-title text-center display-4">
+                  {recipe.title}
+                </h2>
+                <p className="text-center card-text">
+                  <small className="text-muted">
+                    Created by: {recipe.user?.username}
+                  </small>
+                </p>
 
-            <div className="info-section mb-4">
-              <p className="card-text px-4">
-                <strong>Cooking Method:</strong> {recipe.cookingMethod.name}
-              </p>
-              <p className="card-text px-4">
-                <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
-              </p>
-            </div>
+                <div className="mb-4">
+                  <h4>Ingredients</h4>
+                  <ul className="list-group px-4">
+                    {ingredientsList.map((ingredient, index) => (
+                      <li key={index} className="list-group-item">
+                        {ingredient}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            <div className="mb-4">
-              <h4>Ingredients</h4>
-              <ul className="list-group px-4">
-                {ingredientsList.map((ingredient, index) => (
-                  <li key={index} className="list-group-item">
-                    {ingredient}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <div className="mb-4">
+                  <h4>Instructions</h4>
+                  <ol className="list-group px-4">
+                    {instructionsList.map((instruction, index) => (
+                      <li key={index} className="list-group-item">
+                        {instruction}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
 
-            <div className="mb-4">
-              <h4>Instructions</h4>
-              <ol className="list-group px-4">
-                {instructionsList.map((instruction, index) => (
-                  <li key={index} className="list-group-item">
-                    {instruction}
-                  </li>
-                ))}
-              </ol>
+                <div className="info-section mb-4">
+                  <p className="card-text px-4">
+                    <strong>Cooking Method:</strong> {recipe.cookingMethod.name}
+                  </p>
+                  <p className="card-text px-4">
+                    <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-md-4">
+                {recipe.imageUrl && (
+                  <div className="recipe-image-container">
+                    <img
+                      src={recipe.imageUrl}
+                      alt={recipe.title}
+                      className="img-fluid rounded shadow-sm"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="text-center mt-4">
@@ -78,6 +96,7 @@ export const RecipeDetails = () => {
                   : "All Recipes"}
               </button>
             </div>
+
             <div className="mt-4">
               <RatingsSummary recipeId={recipeId} />
             </div>

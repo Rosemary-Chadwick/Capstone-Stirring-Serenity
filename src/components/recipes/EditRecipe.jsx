@@ -19,6 +19,8 @@ export const EditRecipe = () => {
   const { recipeId } = useParams();
   const navigate = useNavigate();
   const [cookingMethods, setCookingMethods] = useState([]);
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     getCookingMethods().then(setCookingMethods);
@@ -33,27 +35,62 @@ export const EditRecipe = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const cleanedRecipe = {
-      ...recipe,
-      ingredients: recipe.ingredients
-        .split("\n")
-        .map((i) => i.trim())
-        .filter((i) => i !== "")
-        .join("\n"),
-      instructions: recipe.instructions
-        .split("\n")
-        .map((i) => i.trim())
-        .filter((i) => i !== "")
-        .join("\n"),
-      cookingTime: parseInt(recipe.cookingTime) || 0,
-      cookingMethodId: parseInt(recipe.cookingMethodId) || 0,
-    };
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Image must be smaller than 5MB");
+        return;
+      }
 
-    editRecipe(recipeId, cleanedRecipe).then(() => {
+      if (!["image/jpeg", "image/png", "image/jpg"].includes(file.type)) {
+        alert("Only .jpg, .jpeg and .png files are allowed");
+        return;
+      }
+
+      setImageFile(file);
+      setImagePreview(URL.createObjectURL(file));
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const formData = new FormData();
+
+      const cleanedRecipe = {
+        ...recipe,
+        ingredients: recipe.ingredients
+          .split("\n")
+          .map((i) => i.trim())
+          .filter((i) => i !== "")
+          .join("\n"),
+        instructions: recipe.instructions
+          .split("\n")
+          .map((i) => i.trim())
+          .filter((i) => i !== "")
+          .join("\n"),
+        cookingTime: parseInt(recipe.cookingTime) || 0,
+        cookingMethodId: parseInt(recipe.cookingMethodId) || 0,
+      };
+
+      // Append all recipe data
+      Object.keys(cleanedRecipe).forEach((key) => {
+        formData.append(key, cleanedRecipe[key]);
+      });
+
+      // Append image if exists
+      if (imageFile) {
+        formData.append("image", imageFile);
+      }
+
+      await editRecipe(recipeId, formData);
       navigate("/recipes/my-recipes");
-    });
+    } catch (error) {
+      console.error("Error updating recipe:", error);
+      alert("Failed to update recipe. Please try again.");
+    }
   };
 
   return (
@@ -112,6 +149,36 @@ export const EditRecipe = () => {
                         onChange={handleInputChange}
                         required
                       />
+                    </div>
+
+                    <div className="mb-3">
+                      <label className="form-label fw-bold">Recipe Image</label>
+                      {recipe.imageUrl && (
+                        <div className="mb-2">
+                          <img
+                            src={recipe.imageUrl}
+                            alt="Current recipe"
+                            className="img-thumbnail"
+                            style={{ maxHeight: "200px", objectFit: "cover" }}
+                          />
+                        </div>
+                      )}
+                      <input
+                        type="file"
+                        className="form-control border border-2"
+                        accept="image/jpeg,image/png,image/jpg"
+                        onChange={handleImageChange}
+                      />
+                      {imagePreview && (
+                        <div className="mt-2">
+                          <img
+                            src={imagePreview}
+                            alt="New preview"
+                            className="img-thumbnail"
+                            style={{ maxHeight: "200px", objectFit: "cover" }}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
