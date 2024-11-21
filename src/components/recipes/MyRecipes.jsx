@@ -33,6 +33,14 @@ export const MyRecipes = () => {
               {recipes.map((recipe) => (
                 <div key={recipe.id} className="col">
                   <div className="card h-100">
+                    {recipe.thumbnailUrl && (
+                      <img
+                        src={recipe.thumbnailUrl}
+                        className="card-img-top"
+                        alt={recipe.title}
+                        style={{ height: "200px", objectFit: "cover" }}
+                      />
+                    )}
                     <div className="card-body">
                       <h5 className="card-title">{recipe.title}</h5>
                       <p className="card-text">

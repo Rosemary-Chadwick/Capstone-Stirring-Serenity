@@ -100,11 +100,11 @@
 }
 
 .navbar-toggler {
-  border-color: var(--nav-text) !important;
+  border-color: var(nav-bg) !important;
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(218, 165, 32, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 .btn-primary {
@@ -585,4 +585,103 @@ body {
 .btn {
   letter-spacing: 0.03em;
   font-weight: 500;
+}
+/* Add these new styles to your theme.css file */
+
+/* Recipe List Card Styles */
+.col-12.col-md-6.col-lg-4 .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border: none !important;
+  background-color: var(--container-bg) !important;
+}
+
+.col-12.col-md-6.col-lg-4 .card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Recipe Details Layout */
+.recipe-details-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 2rem !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+}
+
+.recipe-details-row .col-md-8 {
+  flex: 1 1 auto !important;
+  width: 66.666667% !important;
+  max-width: 66.666667% !important;
+}
+
+.recipe-details-row .col-md-4 {
+  flex: 0 0 auto !important;
+  width: 33.333333% !important;
+  max-width: 33.333333% !important;
+}
+
+.recipe-image-container {
+  position: sticky;
+  top: 8rem;
+  padding: 1.4rem;
+  margin-top: 12rem;
+  margin-right: 3rem;
+  border-radius: 0.5rem;
+  /* Adding background card with shadow */
+  background-color: var(--container-bg);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  /* Adding a pseudo-element for the background card */
+  position: relative;
+}
+
+/* Background card effect */
+.recipe-image-container::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: -2rem;
+  bottom: -2rem;
+  background-color: var(--container-bg);
+  border-radius: 0.5rem;
+  z-index: -1;
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image-container img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 4rem);
+  object-fit: cover;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the image */
+}
+
+@media (max-width: 768px) {
+  .recipe-details-row {
+    flex-direction: column !important;
+  }
+
+  .recipe-details-row .col-md-8,
+  .recipe-details-row .col-md-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .recipe-image-container {
+    position: relative;
+    top: 0;
+    margin-top: 2rem;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .recipe-image-container::before {
+    top: 0.5rem;
+    left: 0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+  }
 }

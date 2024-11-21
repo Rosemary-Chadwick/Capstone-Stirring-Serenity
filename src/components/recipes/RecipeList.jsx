@@ -73,6 +73,14 @@ export const RecipeList = () => {
             {filteredRecipes.map((recipe) => (
               <div key={recipe.id} className="col-12 col-md-6 col-lg-4">
                 <div className="card h-100">
+                  {recipe.thumbnailUrl && (
+                    <img
+                      src={recipe.thumbnailUrl}
+                      className="card-img-top"
+                      alt={recipe.title}
+                      style={{ height: "200px", objectFit: "cover" }}
+                    />
+                  )}
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{recipe.title}</h5>
                     <p className="card-text">

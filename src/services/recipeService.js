@@ -14,14 +14,65 @@ export const getRecipeById = (id) => {
   ).then((res) => res.json());
 };
 
-export const createRecipeInfo = (recipe) => {
-  return fetch(`${API_BASE}/recipes`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(recipe),
-  }).then((res) => res.json());
+export const createRecipeInfo = async (formData) => {
+  try {
+    // First, handle image upload to Cloudinary if it exists
+    let imageUrls = {};
+    const imageFile = formData.get("image");
+
+    if (imageFile) {
+      const cloudinaryData = new FormData();
+      cloudinaryData.append("file", imageFile);
+      cloudinaryData.append(
+        "upload_preset",
+        import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
+      );
+
+      const cloudinaryResponse = await fetch(
+        `https://api.cloudinary.com/v1_1/${
+          import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+        }/image/upload`,
+        {
+          method: "POST",
+          body: cloudinaryData,
+        }
+      );
+
+      const imageData = await cloudinaryResponse.json();
+
+      imageUrls = {
+        imageUrl: imageData.secure_url,
+        thumbnailUrl: imageData.secure_url.replace(
+          "/upload/",
+          "/upload/w_300,h_300,c_fill/"
+        ),
+      };
+    }
+
+    // Create recipe object with image URLs if they exist
+    const recipeData = {
+      title: formData.get("title"),
+      ingredients: formData.get("ingredients"),
+      instructions: formData.get("instructions"),
+      cookingTime: parseInt(formData.get("cookingTime")),
+      cookingMethodId: parseInt(formData.get("cookingMethodId")),
+      userId: formData.get("userId"),
+      ...imageUrls,
+    };
+
+    const response = await fetch(`${API_BASE}/recipes`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(recipeData),
+    });
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error in createRecipeInfo:", error);
+    throw error;
+  }
 };
 
 export const getCookingMethods = () => {
@@ -40,12 +91,61 @@ export const deleteRecipe = (id) => {
   });
 };
 
-export const editRecipe = (id, recipe) => {
-  return fetch(`${API_BASE}/recipes/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(recipe),
-  }).then((res) => res.json());
+export const editRecipe = async (id, formData) => {
+  try {
+    let imageUrls = {};
+
+    const imageFile = formData.get("image");
+    if (imageFile) {
+      const cloudinaryData = new FormData();
+      cloudinaryData.append("file", imageFile);
+      cloudinaryData.append(
+        "upload_preset",
+        import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
+      );
+
+      const cloudinaryResponse = await fetch(
+        `https://api.cloudinary.com/v1_1/${
+          import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+        }/image/upload`,
+        {
+          method: "POST",
+          body: cloudinaryData,
+        }
+      );
+
+      const imageData = await cloudinaryResponse.json();
+
+      imageUrls = {
+        imageUrl: imageData.secure_url,
+        thumbnailUrl: imageData.secure_url.replace(
+          "/upload/",
+          "/upload/w_300,h_300,c_fill/"
+        ),
+      };
+    }
+
+    const recipeData = {
+      title: formData.get("title"),
+      ingredients: formData.get("ingredients"),
+      instructions: formData.get("instructions"),
+      cookingTime: parseInt(formData.get("cookingTime")),
+      cookingMethodId: parseInt(formData.get("cookingMethodId")),
+      userId: formData.get("userId"),
+      ...imageUrls,
+    };
+
+    const response = await fetch(`${API_BASE}/recipes/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(recipeData),
+    });
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error in editRecipe:", error);
+    throw error;
+  }
 };

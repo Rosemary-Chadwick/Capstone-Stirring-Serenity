@@ -55,65 +55,69 @@
   ],
   "recipes": [
     {
-      "id": 1,
       "title": "Classic Chocolate Chip Cookies",
       "ingredients": "2 1/4 cups all-purpose flour\n1 cup butter\n3/4 cup sugar\n3/4 cup brown sugar\n2 large eggs\n1 tsp vanilla extract\n1 tsp baking soda\n1/2 tsp salt\n2 cups chocolate chips",
       "instructions": "1. Preheat oven to 375°F\n2. Cream butter and sugars\n3. Beat in eggs and vanilla\n4. Mix in dry ingredients\n5. Stir in chocolate chips\n6. Drop by rounded tablespoons onto baking sheets\n7. Bake for 10-12 minutes",
       "cookingTime": 25,
-      "userId": 1,
-      "cookingMethodId": 1
+      "cookingMethodId": 1,
+      "userId": "1",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732221656/profiles-pictures/ipodwt0c6h6xhjixeppp.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732221656/profiles-pictures/ipodwt0c6h6xhjixeppp.jpg",
+      "id": 1
     },
     {
-      "id": 2,
       "title": "Grilled Lemon Herb Chicken",
       "ingredients": "4 chicken breasts\n1/4 cup olive oil\n3 lemons\n4 cloves garlic\n1 tbsp fresh rosemary\n1 tbsp fresh thyme\nSalt and pepper to taste",
       "instructions": "1. Mix olive oil, lemon juice, herbs, and garlic\n2. Marinate chicken for 2 hours\n3. Preheat grill to medium-high\n4. Grill chicken 6-7 minutes per side\n5. Let rest 5 minutes before serving",
       "cookingTime": 30,
-      "userId": 2,
-      "cookingMethodId": 2
+      "cookingMethodId": 2,
+      "userId": "2",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732222034/profiles-pictures/huttthzv7lm0y1bozuv7.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732222034/profiles-pictures/huttthzv7lm0y1bozuv7.jpg",
+      "id": 2
     },
     {
-      "id": 3,
       "title": "Kenji's Sous Vide Ribeye Steak",
       "ingredients": "1 large ribeye steak (1.5 to 2 inches thick)\n2 tablespoons olive oil\n4 sprigs fresh thyme\n3 cloves garlic, crushed\n2 tablespoons butter\nKosher salt\nFreshly ground black pepper",
       "instructions": "1. Preheat sous vide water bath to 129°F (54°C) for medium-rare\n2. Season steak generously with salt and pepper\n3. Place steak in a zipper-lock or vacuum seal bag with thyme and garlic\n4. Seal bag using water displacement method or vacuum sealer\n5. Cook for 1 to 2.5 hours\n6. Remove steak from bag and pat very dry with paper towels\n7. Heat oil in a cast iron skillet until smoking\n8. Add steak and butter, sear 45 seconds per side\n9. Using tongs, sear edges until browned\n10. Let rest 5 minutes before slicing\n11. Serve with compound butter if desired",
       "cookingTime": 150,
-      "userId": 3,
-      "cookingMethodId": 4
+      "cookingMethodId": 4,
+      "userId": "3",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732223278/profiles-pictures/lnuydlhhhhea03wvr2kf.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732223278/profiles-pictures/lnuydlhhhhea03wvr2kf.jpg",
+      "id": 3
     },
     {
-      "id": 4,
       "title": "Kenji's Sous Vide Chicken Breast",
       "ingredients": "4 chicken breasts (boneless, skinless)\n2 tablespoons olive oil\n4 sprigs fresh herbs (thyme, rosemary, or sage)\n2 cloves garlic, lightly crushed\nKosher salt\nBlack pepper\n2 tablespoons butter for finishing",
       "instructions": "1. Preheat sous vide water bath to 145°F (63°C)\n2. Season chicken breasts generously with salt and pepper\n3. Place chicken in zipper-lock or vacuum seal bags with herbs and garlic\n4. Add 1 tablespoon olive oil per bag\n5. Seal bags using water displacement method or vacuum sealer\n6. Cook for 1.5 to 4 hours (chicken is safe to eat after 1.5 hours but can go longer)\n7. Remove from bags and pat very dry with paper towels\n8. Heat remaining oil in a heavy skillet over high heat until shimmering\n9. Add chicken and butter, sear until golden brown (30 seconds per side)\n10. Let rest 5 minutes before slicing\n11. Serve with pan juices",
       "cookingTime": 90,
-      "userId": 3,
       "cookingMethodId": 4,
-      "cookingMethod": {
-        "id": 4,
-        "name": "Sous Vide"
-      }
+      "userId": "3",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732222354/profiles-pictures/ctof5jueuiigm32gxcj7.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732222354/profiles-pictures/ctof5jueuiigm32gxcj7.jpg",
+      "id": 4
     },
     {
       "title": "Something to Edit again",
       "ingredients": "meat 2",
       "instructions": "heat2",
       "cookingTime": 20,
-      "userId": 3,
       "cookingMethodId": 2,
-      "id": 5,
-      "cookingMethod": {
-        "id": 5,
-        "name": "Pressure Cooking"
-      }
+      "userId": "3",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732222498/profiles-pictures/z9axmq7wqxtxf5bnkyse.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732222498/profiles-pictures/z9axmq7wqxtxf5bnkyse.jpg",
+      "id": 5
     },
     {
       "title": "Grilled Cheese",
       "ingredients": "3 cups of shredded cheese\n2 slices of bread\n1 Tbsp of butter",
       "instructions": "1. Slather butter on bread\n2. Turn pan on Medium\n3. Place one slice of bread in the pan, butter side down please.\n4. Pour shredded cheese on top of bread. DON'T DROP ANY CHEESE PLEASE\n5. Place second slice of bread on top of pile of cheese. Butter side up please.\n6. Heat on each side until brown, or as dark as you like.\nCUT ON DIAGONAL ONLY PLEASE",
       "cookingTime": 5,
-      "userId": 6,
       "cookingMethodId": 2,
+      "userId": "6",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732221909/profiles-pictures/wqlcjlqijkfltmn1upqa.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732221909/profiles-pictures/wqlcjlqijkfltmn1upqa.jpg",
       "id": 6
     }
   ],
