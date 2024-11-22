@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getRecipeById } from "../../services/recipeService";
 import { RatingsSummary } from "../ratings/RatingsSummary";
 import { NotesList } from "../notes/NoteList";
+import { SimilarRecipes } from "./similar/SimilarRecipes";
 
 export const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
@@ -104,6 +105,8 @@ export const RecipeDetails = () => {
             <div className="mt-4">
               <NotesList recipeId={recipeId} />
             </div>
+
+            <SimilarRecipes currentRecipeId={recipeId} />
           </div>
         </div>
       </div>
