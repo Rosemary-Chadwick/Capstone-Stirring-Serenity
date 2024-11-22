@@ -37,6 +37,12 @@ export const NavBar = () => {
             </li>
 
             <li className="nav-item">
+              <Link className="nav-link" to="/recipes/favorites">
+                My Favorites
+              </Link>
+            </li>
+
+            <li className="nav-item">
               <button
                 className="nav-link btn theme-toggle"
                 onClick={toggleTheme}

@@ -4,6 +4,7 @@ import { getRecipeById } from "../../services/recipeService";
 import { RatingsSummary } from "../ratings/RatingsSummary";
 import { NotesList } from "../notes/NoteList";
 import { SimilarRecipes } from "./similar/SimilarRecipes";
+import { FavoriteButton } from "../favorites/FavoriteButton";
 
 export const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
@@ -35,9 +36,12 @@ export const RecipeDetails = () => {
           <div className="card-body">
             <div className="recipe-details-row">
               <div className="col-md-8">
-                <h2 className="card-title text-center display-4">
-                  {recipe.title}
-                </h2>
+                <div className="d-flex justify-content-between align-items-center">
+                  <h2 className="card-title text-center display-4">
+                    {recipe.title}
+                  </h2>
+                  <FavoriteButton recipeId={recipe.id} />
+                </div>
                 <p className="text-center card-text">
                   <small className="text-muted">
                     Created by: {recipe.user?.username}
