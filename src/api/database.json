@@ -103,10 +103,10 @@
       "ingredients": "meat 2",
       "instructions": "heat2",
       "cookingTime": 20,
-      "cookingMethodId": 2,
+      "cookingMethodId": 5,
       "userId": "3",
-      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732222498/profiles-pictures/z9axmq7wqxtxf5bnkyse.jpg",
-      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732222498/profiles-pictures/z9axmq7wqxtxf5bnkyse.jpg",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732398999/profiles-pictures/spnsohhofbxftmt4quby.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732398999/profiles-pictures/spnsohhofbxftmt4quby.jpg",
       "id": 5
     },
     {
@@ -289,6 +289,13 @@
       "comment": "Nice and hearty grilled cheese! provided you can find large enough bread!",
       "dateCreated": "2024-11-19T21:21:00.755Z",
       "id": 11
+    },
+    {
+      "recipeId": 4,
+      "userId": 1,
+      "comment": "Just dropping a note",
+      "dateCreated": "2024-11-23T22:05:26.858Z",
+      "id": 12
     }
   ],
   "favorites": [
