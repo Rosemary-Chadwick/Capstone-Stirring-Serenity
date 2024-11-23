@@ -16,3 +16,25 @@ export const createUser = (user) => {
     body: JSON.stringify(user),
   }).then((res) => res.json());
 };
+
+export const getUserById = (id) => {
+  return fetch(`${API_BASE}/users/${id}`).then((res) => res.json());
+};
+
+export const updateUser = (id, userData) => {
+  return fetch(`${API_BASE}/users/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  }).then((res) => res.json());
+};
+
+//verify email uniqueness when updating
+export const checkEmailExists = async (email, userId) => {
+  const users = await fetch(`${API_BASE}/users?email=${email}`).then((res) =>
+    res.json()
+  );
+  return users.some((user) => user.id !== userId && user.email === email);
+};

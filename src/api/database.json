@@ -11,9 +11,9 @@
       "email": "sarah@example.com"
     },
     {
-      "id": 3,
       "username": "J. Kenji Lopez-Alt",
-      "email": "kenji@example.com"
+      "email": "kenji@example.com",
+      "id": 3
     },
     {
       "id": 4,

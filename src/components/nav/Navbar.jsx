@@ -26,6 +26,15 @@ export const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
+              <button
+                className="nav-link btn theme-toggle"
+                onClick={toggleTheme}
+                style={{ background: "none", border: "none" }}
+              >
+                {currentTheme === "light" ? "🌙" : "☀️"}
+              </button>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/recipes/create">
                 Create Recipe
               </Link>
@@ -43,13 +52,9 @@ export const NavBar = () => {
             </li>
 
             <li className="nav-item">
-              <button
-                className="nav-link btn theme-toggle"
-                onClick={toggleTheme}
-                style={{ background: "none", border: "none" }}
-              >
-                {currentTheme === "light" ? "🌙" : "☀️"}
-              </button>
+              <Link className="nav-link" to="/recipes/profile">
+                My Profile
+              </Link>
             </li>
 
             <li className="nav-item">
