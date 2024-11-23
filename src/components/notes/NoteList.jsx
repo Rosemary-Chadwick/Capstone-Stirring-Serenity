@@ -30,35 +30,60 @@ export const NotesList = ({ recipeId }) => {
     loadNotes();
   };
 
+  // If user is the recipe author, show all notes in read-only mode
+  if (recipe?.userId === currentUser.id) {
+    return (
+      <div className="card">
+        <div className="card-body">
+          <h4 className="card-title mb-4">Recipe Notes</h4>
+          <div className="notes-list">
+            {notes.map((note) => (
+              <div key={note.id} className="card mb-3">
+                <div className="card-body">
+                  <p className="card-text">{note.comment}</p>
+                  <p className="card-text">
+                    <small className="text-muted">
+                      By: {note.user.username}
+                    </small>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="card">
       <div className="card-body">
-        <h4 className="card-title mb-2">Recipe Notes</h4>
-        {recipe?.userId !== currentUser.id && (
-          <AddNote recipeId={recipeId} onNoteAdded={loadNotes} />
-        )}
+        <h4 className="card-title mb-4">Recipe Notes</h4>
+        <AddNote recipeId={recipeId} onNoteAdded={loadNotes} />
         <div className="notes-list">
-          {notes.map((note) =>
-            editingNote?.id === note.id ? (
-              <EditNote
-                key={note.id}
-                note={note}
-                onCancel={() => setEditingNote(null)}
-                onSave={() => {
-                  setEditingNote(null);
-                  loadNotes();
-                }}
-              />
-            ) : (
-              <NoteCard
-                key={note.id}
-                note={note}
-                currentUser={currentUser}
-                onEdit={setEditingNote}
-                onDelete={handleDeleteNote}
-              />
-            )
-          )}
+          {notes
+            .filter((note) => note.userId === currentUser.id)
+            .map((note) =>
+              editingNote?.id === note.id ? (
+                <EditNote
+                  key={note.id}
+                  note={note}
+                  onCancel={() => setEditingNote(null)}
+                  onSave={() => {
+                    setEditingNote(null);
+                    loadNotes();
+                  }}
+                />
+              ) : (
+                <NoteCard
+                  key={note.id}
+                  note={note}
+                  currentUser={currentUser}
+                  onEdit={setEditingNote}
+                  onDelete={handleDeleteNote}
+                />
+              )
+            )}
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ import { CreateRecipe } from "../recipes/CreateRecipe.jsx";
 import { MyRecipes } from "../recipes/MyRecipes.jsx";
 import { EditRecipe } from "../recipes/EditRecipe.jsx";
 import { FavoritesList } from "../favorites/FavoriteList.jsx";
+import { UserProfile } from "../profile/UserProfile.jsx";
 
 const Layout = () => {
   return (
@@ -34,6 +35,7 @@ export const ApplicationViews = () => {
           <Route path="create" element={<CreateRecipe />} />
           <Route path="my-recipes" element={<MyRecipes />} />
           <Route path="favorites" element={<FavoritesList />} />
+          <Route path="profile" element={<UserProfile />} />
           <Route path="edit/:recipeId" element={<EditRecipe />} />
         </Route>
       </Route>
