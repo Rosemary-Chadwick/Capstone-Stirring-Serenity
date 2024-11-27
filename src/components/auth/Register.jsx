@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTheme } from "../../theme/ThemeContext";
 import "./Auth.css";
 import { createUser, getUserByEmail } from "../../services/userService";
 
@@ -10,10 +11,14 @@ export const Register = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { currentTheme, setCurrentTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+  };
 
   const registerNewUser = () => {
     createUser(user).then((createdUser) => {
-      //return above statement? same as honey raes
       if (createdUser.hasOwnProperty("id")) {
         localStorage.setItem(
           "recipe_user",
@@ -47,6 +52,15 @@ export const Register = () => {
 
   return (
     <div className="auth-container">
+      <div className="theme-toggle-container">
+        <button
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {currentTheme === "light" ? "🌙" : "☀️"}
+        </button>
+      </div>
       <div className="container py-4">
         <div className="card shadow-sm">
           <div className="card-body">

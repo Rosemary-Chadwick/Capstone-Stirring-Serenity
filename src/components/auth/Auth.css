@@ -1,33 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-/* Auth Styles */
+/* Auth Styles with Theme Integration */
 .auth-container {
-  --auth-bg: #fdf6e3;
-  --auth-card-bg: #ffffff;
-  --auth-text: #1b2a3c;
-  --auth-primary: #1b2a3c;
-  --auth-accent: #daa520;
-  --auth-outline: #d1d5db;
-
-  background-color: var(--auth-bg) !important;
+  /* Use existing theme variables instead of defining new ones */
+  background-color: var(--background) !important;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; /* Added this */
-  font-family: "Quicksand", sans-serif !important;
+  justify-content: center;
+  font-family: var(--body-font) !important;
 }
 
 .auth-container .container {
-  background-color: var(--auth-bg) !important;
-  display: flex; /* Added this */
-  justify-content: center; /* Added this */
-  width: 100%; /* Added this */
+  background-color: var(--background) !important;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .auth-container .card {
-  background-color: var(--auth-card-bg) !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(27, 42, 60, 0.1) !important;
+  background-color: var(--container-bg) !important;
+  border: 1px solid var(--outline) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   width: 100%;
   max-width: 400px;
 }
@@ -41,16 +35,16 @@
 }
 
 .auth-form h1 {
-  font-family: "Petit Formal Script", cursive !important;
-  color: var(--auth-text) !important;
+  font-family: var(--header-font) !important;
+  color: var(--text) !important;
   font-size: 3.5rem !important;
   font-weight: 400 !important;
   margin-bottom: 1rem;
 }
 
 .auth-form h2 {
-  font-family: "Petit Formal Script", cursive !important;
-  color: var(--auth-text) !important;
+  font-family: var(--header-font) !important;
+  color: var(--text) !important;
   font-size: 2.5rem !important;
   font-weight: 400 !important;
   margin-bottom: 2rem;
@@ -61,29 +55,30 @@
 }
 
 .auth-form .form-control {
-  font-family: "Quicksand", sans-serif !important;
-  background-color: var(--auth-card-bg) !important;
-  border: 1px solid var(--auth-outline) !important;
-  color: var(--auth-text) !important;
+  font-family: var(--body-font) !important;
+  background-color: var(--container-bg) !important;
+  border: 1px solid var(--outline) !important;
+  color: var(--text) !important;
   padding: 0.75rem;
   font-size: 1rem;
   width: 100%;
 }
 
 .auth-form .form-control:focus {
-  border-color: var(--auth-accent) !important;
+  border-color: var(--accent) !important;
   box-shadow: 0 0 0 0.25rem rgba(218, 165, 32, 0.25) !important;
 }
 
 .auth-form .btn-primary {
-  background-color: var(--auth-primary) !important;
-  border-color: var(--auth-primary) !important;
-  color: #fdf6e3 !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--nav-text) !important;
   padding: 0.75rem 2rem;
   font-size: 1rem;
   width: 100%;
-  font-family: "Quicksand", sans-serif !important;
+  font-family: var(--body-font) !important;
   font-weight: 500;
+  transition: opacity 0.3s ease;
 }
 
 .auth-form .btn-primary:hover {
@@ -96,9 +91,10 @@
 }
 
 .auth-link a {
-  color: var(--auth-primary) !important;
+  color: var(--accent) !important;
   text-decoration: none;
-  font-family: "Quicksand", sans-serif !important;
+  font-family: var(--body-font) !important;
+  transition: opacity 0.3s ease;
 }
 
 .auth-link a:hover {
@@ -106,36 +102,61 @@
 }
 
 .error-message {
-  color: #dc3545;
+  color: var(--secondary);
   margin-bottom: 1rem;
   font-size: 0.875rem;
-  font-family: "Quicksand", sans-serif !important;
+  font-family: var(--body-font) !important;
 }
 
+/* Placeholder styles */
 .auth-form .form-control::placeholder {
-  color: var(--auth-text) !important;
-  opacity: 0.5 !important; /* Makes the placeholder slightly lighter */
-  font-family: "Quicksand", sans-serif !important;
-  font-weight: 300; /* Makes placeholder text lighter weight */
+  color: var(--text) !important;
+  opacity: 0.5 !important;
+  font-family: var(--body-font) !important;
+  font-weight: 300;
 }
 
-/* For different browser compatibility */
 .auth-form .form-control::-webkit-input-placeholder {
-  color: var(--auth-text) !important;
+  color: var(--text) !important;
   opacity: 0.5 !important;
 }
 
 .auth-form .form-control::-moz-placeholder {
-  color: var(--auth-text) !important;
+  color: var(--text) !important;
   opacity: 0.5 !important;
 }
 
 .auth-form .form-control:-ms-input-placeholder {
-  color: var(--auth-text) !important;
+  color: var(--text) !important;
   opacity: 0.5 !important;
 }
+.theme-toggle-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
 
-/* Force light mode when on auth pages */
-body:has(.auth-container) {
-  background-color: var(--auth-bg) !important;
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--outline);
+}
+
+/* Optional: Add a subtle animation for the emoji */
+.theme-toggle-btn:active {
+  transform: scale(0.95);
 }
