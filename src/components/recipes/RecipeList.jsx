@@ -31,7 +31,9 @@ export const RecipeList = () => {
     // selected method has both the string and numerical value so parsInt can change it from a string to a number
     if (selectedMethod) {
       filtered = filtered.filter(
-        (recipe) => recipe.cookingMethodId === parseInt(selectedMethod)
+        (recipe) =>
+          parseInt(recipe.cookingMethodId) === parseInt(selectedMethod)
+        //or (recipe) => recipe.cookingMethodId.toString() === selectedMethod.toString()
       );
     }
 
