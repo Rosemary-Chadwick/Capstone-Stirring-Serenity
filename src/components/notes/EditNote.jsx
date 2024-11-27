@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { editFriendsNote } from "../../services/noteService";
+import { useRecipePermissions } from "../../hooks/useRecipePermissions";
 
-export const EditNote = ({ note, onCancel, onSave }) => {
+export const EditNote = ({ note, onCancel, onSave, recipe }) => {
   const [editedComment, setEditedComment] = useState(note.comment);
+  const { canComment } = useRecipePermissions(recipe);
+
+  if (!canComment) return null;
 
   const handleSave = async () => {
     await editFriendsNote(note.id, {

@@ -93,10 +93,19 @@ export const deleteRecipe = (id) => {
 
 export const editRecipe = async (id, formData) => {
   try {
-    let imageUrls = {};
-
     const imageFile = formData.get("image");
-    if (imageFile) {
+    let recipeData = {};
+
+    // Convert FormData to object first
+    for (let [key, value] of formData.entries()) {
+      if (key !== "image") {
+        // Skip the file
+        recipeData[key] = value;
+      }
+    }
+
+    // Only handle image upload if a new image was provided
+    if (imageFile && imageFile.size > 0) {
       const cloudinaryData = new FormData();
       cloudinaryData.append("file", imageFile);
       cloudinaryData.append(
@@ -116,24 +125,13 @@ export const editRecipe = async (id, formData) => {
 
       const imageData = await cloudinaryResponse.json();
 
-      imageUrls = {
-        imageUrl: imageData.secure_url,
-        thumbnailUrl: imageData.secure_url.replace(
-          "/upload/",
-          "/upload/w_300,h_300,c_fill/"
-        ),
-      };
+      recipeData.imageUrl = imageData.secure_url;
+      recipeData.thumbnailUrl = imageData.secure_url.replace(
+        "/upload/",
+        "/upload/w_300,h_300,c_fill/"
+      );
     }
-
-    const recipeData = {
-      title: formData.get("title"),
-      ingredients: formData.get("ingredients"),
-      instructions: formData.get("instructions"),
-      cookingTime: parseInt(formData.get("cookingTime")),
-      cookingMethodId: parseInt(formData.get("cookingMethodId")),
-      userId: formData.get("userId"),
-      ...imageUrls,
-    };
+    console.log("Data being sent:", JSON.stringify(recipeData, null, 2));
 
     const response = await fetch(`${API_BASE}/recipes/${id}`, {
       method: "PUT",

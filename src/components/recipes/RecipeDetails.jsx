@@ -5,26 +5,30 @@ import { RatingsSummary } from "../ratings/RatingsSummary";
 import { NotesList } from "../notes/NoteList";
 import { SimilarRecipes } from "./similar/SimilarRecipes";
 import { FavoriteButton } from "../favorites/FavoriteButton";
+import { useRecipePermissions } from "../../hooks/useRecipePermissions";
 
 export const RecipeDetails = () => {
   const [recipe, setRecipe] = useState(null);
   const { recipeId } = useParams();
   const navigate = useNavigate();
   const currentUser = JSON.parse(localStorage.getItem("recipe_user"));
+  const { isOwner } = useRecipePermissions(recipe);
 
   useEffect(() => {
-    getRecipeById(recipeId).then(setRecipe);
+    if (recipeId) {
+      getRecipeById(recipeId).then((data) => setRecipe(data));
+    }
   }, [recipeId]);
 
+  if (!recipe) return <div>Loading...</div>;
+
   const handleBack = () => {
-    if (recipe?.userId === currentUser.id) {
+    if (isOwner) {
       navigate("/recipes/my-recipes");
     } else {
       navigate("/");
     }
   };
-
-  if (!recipe) return <div>Loading...</div>;
 
   const ingredientsList = recipe.ingredients.split("\n");
   const instructionsList = recipe.instructions.split("\n");

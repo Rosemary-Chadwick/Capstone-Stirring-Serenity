@@ -14,7 +14,7 @@ export const NotesList = ({ recipeId }) => {
   const [editingNote, setEditingNote] = useState(null);
   const [recipe, setRecipe] = useState(null);
   const currentUser = JSON.parse(localStorage.getItem("recipe_user"));
-  const { isOwner, canComment } = useRecipePermissions(recipe);
+  const { canComment } = useRecipePermissions(recipe);
 
   const loadNotes = () => {
     getFriendsNotesByRecipeId(recipeId).then((data) => {
@@ -43,6 +43,7 @@ export const NotesList = ({ recipeId }) => {
               <EditNote
                 key={note.id}
                 note={note}
+                recipe={recipe}
                 onCancel={() => setEditingNote(null)}
                 onSave={() => {
                   setEditingNote(null);
@@ -53,6 +54,7 @@ export const NotesList = ({ recipeId }) => {
               <NoteCard
                 key={note.id}
                 note={note}
+                recipe={recipe}
                 currentUser={currentUser}
                 onEdit={setEditingNote}
                 onDelete={handleDeleteNote}

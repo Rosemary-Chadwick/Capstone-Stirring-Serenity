@@ -14,13 +14,14 @@ export const EditRecipe = () => {
     cookingTime: "",
     userId: JSON.parse(localStorage.getItem("recipe_user")).id,
     cookingMethodId: "",
+    imageUrl: "",
   });
 
   const { recipeId } = useParams();
   const navigate = useNavigate();
   const [cookingMethods, setCookingMethods] = useState([]);
+  const [newImageURL, setNewImageURL] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
 
   useEffect(() => {
     getCookingMethods().then(setCookingMethods);
@@ -49,7 +50,9 @@ export const EditRecipe = () => {
       }
 
       setImageFile(file);
-      setImagePreview(URL.createObjectURL(file));
+      // Create and set the preview URL
+      const objectUrl = URL.createObjectURL(file);
+      setNewImageURL(objectUrl);
     }
   };
 
@@ -60,19 +63,14 @@ export const EditRecipe = () => {
       const formData = new FormData();
 
       const cleanedRecipe = {
-        ...recipe,
-        ingredients: recipe.ingredients
-          .split("\n")
-          .map((i) => i.trim())
-          .filter((i) => i !== "")
-          .join("\n"),
-        instructions: recipe.instructions
-          .split("\n")
-          .map((i) => i.trim())
-          .filter((i) => i !== "")
-          .join("\n"),
-        cookingTime: parseInt(recipe.cookingTime) || 0,
-        cookingMethodId: parseInt(recipe.cookingMethodId) || 0,
+        title: recipe.title,
+        ingredients: recipe.ingredients,
+        instructions: recipe.instructions,
+        cookingTime: parseInt(recipe.cookingTime),
+        cookingMethodId: parseInt(recipe.cookingMethodId),
+        userId: parseInt(recipe.userId),
+        imageUrl: recipe.imageUrl,
+        thumbnailUrl: recipe.thumbnailUrl,
       };
 
       // Append all recipe data
@@ -80,7 +78,7 @@ export const EditRecipe = () => {
         formData.append(key, cleanedRecipe[key]);
       });
 
-      // Append image if exists
+      // Append image if one was selected
       if (imageFile) {
         formData.append("image", imageFile);
       }
@@ -156,8 +154,8 @@ export const EditRecipe = () => {
                       {recipe.imageUrl && (
                         <div className="mb-2">
                           <img
-                            src={recipe.imageUrl}
-                            alt="Current recipe"
+                            src={newImageURL || recipe.imageUrl}
+                            alt="Recipe Preview"
                             className="img-thumbnail"
                             style={{ maxHeight: "200px", objectFit: "cover" }}
                           />
@@ -169,16 +167,9 @@ export const EditRecipe = () => {
                         accept="image/jpeg,image/png,image/jpg"
                         onChange={handleImageChange}
                       />
-                      {imagePreview && (
-                        <div className="mt-2">
-                          <img
-                            src={imagePreview}
-                            alt="New preview"
-                            className="img-thumbnail"
-                            style={{ maxHeight: "200px", objectFit: "cover" }}
-                          />
-                        </div>
-                      )}
+                      <small className="text-muted">
+                        Leave empty to keep current image
+                      </small>
                     </div>
                   </div>
                 </div>
