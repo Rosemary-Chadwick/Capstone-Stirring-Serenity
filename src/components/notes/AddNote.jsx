@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { addFriendsNote } from "../../services/noteService";
+import { useRecipePermissions } from "../../hooks/useRecipePermissions";
 
 export const AddNote = ({ recipeId, onNoteAdded }) => {
   const [newNote, setNewNote] = useState("");
   const currentUser = JSON.parse(localStorage.getItem("recipe_user"));
+  const { canComment } = useRecipePermissions(recipeId);
+
+  if (!canComment) return null;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

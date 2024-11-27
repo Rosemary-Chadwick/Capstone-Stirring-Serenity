@@ -1,4 +1,7 @@
-export const NoteCard = ({ note, currentUser, onEdit, onDelete }) => {
+export const NoteCard = ({ note, currentUser, recipe, onEdit, onDelete }) => {
+  const isUsersNote = note.userId === currentUser.id;
+  const isNotRecipeOwner = recipe?.userId !== currentUser.id;
+
   return (
     <div className="card mb-3">
       <div className="card-body p-1">
@@ -6,7 +9,7 @@ export const NoteCard = ({ note, currentUser, onEdit, onDelete }) => {
         <p className="card-text">
           <small className="text-muted">By: {note.user.username}</small>
         </p>
-        {note.userId === currentUser.id && (
+        {isUsersNote && isNotRecipeOwner && (
           <div>
             <button
               className="btn btn-warning btn-sm me-2"

@@ -58,11 +58,11 @@
       "title": "Classic Chocolate Chip Cookies",
       "ingredients": "2 1/4 cups all-purpose flour\n1 cup butter\n3/4 cup sugar\n3/4 cup brown sugar\n2 large eggs\n1 tsp vanilla extract\n1 tsp baking soda\n1/2 tsp salt\n2 cups chocolate chips",
       "instructions": "1. Preheat oven to 375°F\n2. Cream butter and sugars\n3. Beat in eggs and vanilla\n4. Mix in dry ingredients\n5. Stir in chocolate chips\n6. Drop by rounded tablespoons onto baking sheets\n7. Bake for 10-12 minutes",
-      "cookingTime": 25,
-      "cookingMethodId": 1,
+      "cookingTime": "25",
+      "cookingMethodId": "1",
       "userId": "1",
-      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732221656/profiles-pictures/ipodwt0c6h6xhjixeppp.jpg",
-      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732221656/profiles-pictures/ipodwt0c6h6xhjixeppp.jpg",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732747420/profiles-pictures/ixxlxi5beunjxn2avocp.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732747420/profiles-pictures/ixxlxi5beunjxn2avocp.jpg",
       "id": 1
     },
     {
@@ -80,33 +80,33 @@
       "title": "Kenji's Sous Vide Ribeye Steak",
       "ingredients": "1 large ribeye steak (1.5 to 2 inches thick)\n2 tablespoons olive oil\n4 sprigs fresh thyme\n3 cloves garlic, crushed\n2 tablespoons butter\nKosher salt\nFreshly ground black pepper",
       "instructions": "1. Preheat sous vide water bath to 129°F (54°C) for medium-rare\n2. Season steak generously with salt and pepper\n3. Place steak in a zipper-lock or vacuum seal bag with thyme and garlic\n4. Seal bag using water displacement method or vacuum sealer\n5. Cook for 1 to 2.5 hours\n6. Remove steak from bag and pat very dry with paper towels\n7. Heat oil in a cast iron skillet until smoking\n8. Add steak and butter, sear 45 seconds per side\n9. Using tongs, sear edges until browned\n10. Let rest 5 minutes before slicing\n11. Serve with compound butter if desired",
-      "cookingTime": 150,
-      "cookingMethodId": 4,
+      "cookingTime": "150",
+      "cookingMethodId": "4",
       "userId": "3",
-      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732223278/profiles-pictures/lnuydlhhhhea03wvr2kf.jpg",
-      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732223278/profiles-pictures/lnuydlhhhhea03wvr2kf.jpg",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732747332/profiles-pictures/ifzvbkjzies24fczdigc.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732747332/profiles-pictures/ifzvbkjzies24fczdigc.jpg",
       "id": 3
     },
     {
       "title": "Kenji's Sous Vide Chicken Breast",
       "ingredients": "4 chicken breasts (boneless, skinless)\n2 tablespoons olive oil\n4 sprigs fresh herbs (thyme, rosemary, or sage)\n2 cloves garlic, lightly crushed\nKosher salt\nBlack pepper\n2 tablespoons butter for finishing",
       "instructions": "1. Preheat sous vide water bath to 145°F (63°C)\n2. Season chicken breasts generously with salt and pepper\n3. Place chicken in zipper-lock or vacuum seal bags with herbs and garlic\n4. Add 1 tablespoon olive oil per bag\n5. Seal bags using water displacement method or vacuum sealer\n6. Cook for 1.5 to 4 hours (chicken is safe to eat after 1.5 hours but can go longer)\n7. Remove from bags and pat very dry with paper towels\n8. Heat remaining oil in a heavy skillet over high heat until shimmering\n9. Add chicken and butter, sear until golden brown (30 seconds per side)\n10. Let rest 5 minutes before slicing\n11. Serve with pan juices",
-      "cookingTime": 90,
-      "cookingMethodId": 4,
+      "cookingTime": "90",
+      "cookingMethodId": "4",
       "userId": "3",
-      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732222354/profiles-pictures/ctof5jueuiigm32gxcj7.jpg",
-      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732222354/profiles-pictures/ctof5jueuiigm32gxcj7.jpg",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732747357/profiles-pictures/swn63hxznlxtsc2krjrk.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732747357/profiles-pictures/swn63hxznlxtsc2krjrk.jpg",
       "id": 4
     },
     {
       "title": "Something to Edit again",
       "ingredients": "meat 2",
       "instructions": "heat2",
-      "cookingTime": 20,
-      "cookingMethodId": 2,
+      "cookingTime": "30",
+      "cookingMethodId": "5",
       "userId": "3",
-      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732222498/profiles-pictures/z9axmq7wqxtxf5bnkyse.jpg",
-      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732222498/profiles-pictures/z9axmq7wqxtxf5bnkyse.jpg",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732743379/profiles-pictures/xagfggubak9os1uqb6bw.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732743379/profiles-pictures/xagfggubak9os1uqb6bw.jpg",
       "id": 5
     },
     {
@@ -119,6 +119,17 @@
       "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732221909/profiles-pictures/wqlcjlqijkfltmn1upqa.jpg",
       "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732221909/profiles-pictures/wqlcjlqijkfltmn1upqa.jpg",
       "id": 6
+    },
+    {
+      "title": "testing",
+      "ingredients": "2 somethings\nand salt",
+      "instructions": "heat something til black",
+      "cookingTime": "30",
+      "cookingMethodId": "1",
+      "userId": "3",
+      "imageUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/v1732747093/profiles-pictures/lkcei5obwfoqc8hyygsj.jpg",
+      "thumbnailUrl": "https://res.cloudinary.com/deq7p9gun/image/upload/w_300,h_300,c_fill/v1732747093/profiles-pictures/lkcei5obwfoqc8hyygsj.jpg",
+      "id": 7
     }
   ],
   "ratings": [
@@ -209,18 +220,6 @@
   ],
   "friendsNotes": [
     {
-      "recipeId": 2,
-      "userId": 3,
-      "comment": "Wonderful tasting, and easy to make. I served it with rice and a salad. I might add cherry tomatoes and white wine at the end next time, to make a little sauce and deglaze the pan.",
-      "dateCreated": "2024-11-19T17:57:48.645Z",
-      "id": 1,
-      "user": {
-        "id": 3,
-        "username": "J. Kenji Lopez-Alt",
-        "email": "kenji@example.com"
-      }
-    },
-    {
       "recipeId": 1,
       "userId": 2,
       "comment": "Very yummy cookies!",
@@ -267,7 +266,12 @@
       "userId": 3,
       "comment": "I don't believe in sugar!",
       "dateCreated": "2024-11-19T20:59:24.852Z",
-      "id": 8
+      "id": 8,
+      "user": {
+        "username": "J. Kenji Lopez-Alt",
+        "email": "kenji@example.com",
+        "id": 3
+      }
     },
     {
       "recipeId": 6,
@@ -289,13 +293,27 @@
       "comment": "Nice and hearty grilled cheese! provided you can find large enough bread!",
       "dateCreated": "2024-11-19T21:21:00.755Z",
       "id": 11
+    },
+    {
+      "recipeId": 4,
+      "userId": 1,
+      "comment": "Just dropping a note",
+      "dateCreated": "2024-11-23T22:05:26.858Z",
+      "id": 12
+    },
+    {
+      "recipeId": 2,
+      "userId": 3,
+      "comment": "Wonderful tasting, and easy to make. I served it with rice and a salad. I might add cherry tomatoes and white wine at the end next time, to make a little sauce and deglaze the pan",
+      "dateCreated": "2024-11-27T20:19:57.920Z",
+      "id": 13
     }
   ],
   "favorites": [
     {
       "recipeId": 6,
       "userId": 3,
-      "dateAdded": "2024-11-22T19:26:55.489Z",
+      "dateAdded": "2024-11-27T18:17:50.641Z",
       "id": 1
     }
   ]

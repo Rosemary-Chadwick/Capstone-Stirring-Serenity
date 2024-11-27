@@ -1,3 +1,5 @@
+import { SimilarityBreakdown } from "./SimilarityBreakdown";
+
 export const SimilarRecipeCard = ({ recipe, onViewRecipe }) => {
   const similarityPercent = Math.round(recipe.similarityScore * 100);
 
@@ -29,9 +31,10 @@ export const SimilarRecipeCard = ({ recipe, onViewRecipe }) => {
           </p>
           <p className="card-text">
             <small className="text-muted">
-              Similarity: {similarityPercent}%
+              Overall Similarity: {similarityPercent}%
             </small>
           </p>
+          <SimilarityBreakdown breakdown={recipe.SimilarityBreakdown} />
           <button className="btn btn-primary mt-auto" onClick={onViewRecipe}>
             View Recipe
           </button>

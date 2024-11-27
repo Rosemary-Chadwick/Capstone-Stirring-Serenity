@@ -4,23 +4,30 @@ import {
   removeFavorite,
   checkIfFavorite,
 } from "../../services/favoriteService";
+import { useRecipePermissions } from "../../hooks/useRecipePermissions";
+import { getRecipeById } from "../../services/recipeService";
 
-export const FavoriteButton = ({ recipeId, authorId }) => {
+export const FavoriteButton = ({ recipeId }) => {
+  const [recipe, setRecipe] = useState(null);
+  const { canFavorite } = useRecipePermissions(recipe);
   const currentUser = JSON.parse(localStorage.getItem("recipe_user"));
-
-  if (Number(authorId) === Number(currentUser.id)) return null;
-
   const [isFavorite, setIsFavorite] = useState(false);
   const [favoriteId, setFavoriteId] = useState(null);
 
   useEffect(() => {
-    const checkFavoriteStatus = async () => {
-      const favorite = await checkIfFavorite(recipeId, currentUser.id);
-      setIsFavorite(!!favorite);
-      setFavoriteId(favorite?.id);
-    };
-    checkFavoriteStatus();
-  }, [recipeId, currentUser.id]);
+    getRecipeById(recipeId).then(setRecipe);
+  }, [recipeId]);
+
+  useEffect(() => {
+    if (recipe) {
+      checkIfFavorite(recipeId, currentUser.id).then((favorite) => {
+        setIsFavorite(!!favorite);
+        setFavoriteId(favorite?.id);
+      });
+    }
+  }, [recipeId, currentUser.id, recipe]);
+
+  if (!canFavorite) return null;
 
   const toggleFavorite = async () => {
     try {
