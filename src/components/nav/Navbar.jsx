@@ -5,7 +5,6 @@ export const NavBar = () => {
   const { currentTheme, setCurrentTheme } = useTheme();
 
   const toggleTheme = () => {
-    console.log("Current theme:", currentTheme); // Add this for debugging
     setCurrentTheme(currentTheme === "light" ? "dark" : "light");
   };
 

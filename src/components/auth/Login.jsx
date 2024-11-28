@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../theme/ThemeContext";
 import "./Auth.css";
 import { getUserByEmail } from "../../services/userService";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const { currentTheme, setCurrentTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+  };
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -31,6 +37,15 @@ export const Login = () => {
 
   return (
     <div className="auth-container">
+      <div className="theme-toggle-container">
+        <button
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {currentTheme === "light" ? "🌙" : "☀️"}
+        </button>
+      </div>
       <div className="container py-4">
         <div className="card shadow-sm">
           <div className="card-body">
