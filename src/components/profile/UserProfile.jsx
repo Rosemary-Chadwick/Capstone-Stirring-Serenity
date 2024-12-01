@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   getUserById,
   updateUser,
   checkEmailExists,
+  deleteUser,
 } from "../../services/userService";
 
 export const UserProfile = () => {
@@ -15,6 +17,7 @@ export const UserProfile = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const currentUser = JSON.parse(localStorage.getItem("recipe_user"));
+  const navigate = useNavigate();
 
   useEffect(() => {
     getUserById(currentUser.id).then((userData) => {
@@ -34,6 +37,22 @@ export const UserProfile = () => {
     }));
     setError("");
     setSuccess("");
+  };
+
+  const handleDelete = async () => {
+    if (
+      window.confirm(
+        "Are you sure you want to delete your profile? This action cannot be undone."
+      )
+    ) {
+      try {
+        await deleteUser(currentUser.id);
+        localStorage.removeItem("recipe_user");
+        navigate("/login");
+      } catch (err) {
+        setError("Failed to delete profile. Please try again.");
+      }
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -93,7 +112,18 @@ export const UserProfile = () => {
       <div className="recipe-form">
         <div className="card">
           <div className="card-body">
-            <h2 className="card-title text-center mb-4">My Profile</h2>
+            <div className="d-flex justify-content-center align-items-center mb-4">
+              <h2 className="card-title mb-0">My Profile</h2>
+              {editMode && (
+                <button
+                  className="btn btn-link text-danger ms-3"
+                  onClick={handleDelete}
+                  title="Delete Profile"
+                >
+                  <i className="bi bi-trash fs-5"></i>
+                </button>
+              )}
+            </div>
 
             {error && (
               <div className="alert alert-danger" role="alert">
@@ -166,7 +196,7 @@ export const UserProfile = () => {
                 <div className="mb-3">
                   <strong>Email:</strong> {user.email}
                 </div>
-                <div className="text-center">
+                <div className="d-flex justify-content-center gap-2">
                   <button
                     className="btn btn-primary"
                     onClick={() => setEditMode(true)}

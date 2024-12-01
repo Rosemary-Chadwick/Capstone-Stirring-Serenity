@@ -38,3 +38,14 @@ export const checkEmailExists = async (email, userId) => {
   );
   return users.some((user) => user.id !== userId && user.email === email);
 };
+
+export const deleteUser = (id) => {
+  return fetch(`${API_BASE}/users/${id}`, {
+    method: "DELETE",
+  }).then((res) => {
+    if (!res.ok) {
+      throw new Error("Failed to delete user");
+    }
+    return res;
+  });
+};
