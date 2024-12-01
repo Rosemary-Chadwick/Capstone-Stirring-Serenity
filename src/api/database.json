@@ -307,6 +307,13 @@
       "comment": "Wonderful tasting, and easy to make. I served it with rice and a salad. I might add cherry tomatoes and white wine at the end next time, to make a little sauce and deglaze the pan",
       "dateCreated": "2024-11-27T20:19:57.920Z",
       "id": 13
+    },
+    {
+      "recipeId": 2,
+      "userId": 3,
+      "comment": "this is greeeaaatttteee!",
+      "dateCreated": "2024-11-29T00:56:11.307Z",
+      "id": 14
     }
   ],
   "favorites": [
