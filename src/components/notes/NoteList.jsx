@@ -27,9 +27,12 @@ export const NotesList = ({ recipeId }) => {
     loadNotes();
   }, [recipeId]);
 
-  const handleDeleteNote = async (noteId) => {
-    await deleteFriendsNote(noteId);
-    loadNotes();
+  const handleDelete = (noteId) => {
+    if (window.confirm("Are you sure you want to delete this note?")) {
+      deleteFriendsNote(noteId).then(() => {
+        loadNotes();
+      });
+    }
   };
 
   return (
@@ -57,7 +60,7 @@ export const NotesList = ({ recipeId }) => {
                 recipe={recipe}
                 currentUser={currentUser}
                 onEdit={setEditingNote}
-                onDelete={handleDeleteNote}
+                onDelete={handleDelete}
               />
             )
           )}
